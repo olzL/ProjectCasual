@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Character_Monster : Character
 {
-    public override void Move()
-    {
-        throw new System.NotImplementedException();
-    }
+    private float endPosX;
 
     public override void Attack()
     {
@@ -16,7 +13,7 @@ public class Character_Monster : Character
 
     public override void Die()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(gameObject.name + " Die");
     }
 
     public override void Spawn()
@@ -24,13 +21,27 @@ public class Character_Monster : Character
         throw new System.NotImplementedException();
     }
 
+    public void Move()
+    {
+        Vector2 tmp = transform.position;
+        tmp -= new Vector2(StageManager.Instance.MoveSpeed * Time.deltaTime, 0f);
+        transform.position = tmp;
+    }
+
     protected override void Start()
     {
-        
+        base.Start();
+        endPosX = -Camera.main.orthographicSize * ((float)Screen.width / Screen.height);
     }
 
     protected override void Update()
     {
-        
+        Move();
+
+        if (transform.position.x <= endPosX)
+        {
+            Die();
+            MonsterManager.Instance.RemoveMonster(gameObject.name);
+        }
     }
 }

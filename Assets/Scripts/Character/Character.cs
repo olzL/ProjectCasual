@@ -5,16 +5,20 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    CharacterInfo _characterInfo;
+    CharacterData _characterData;
+
+    public string Name { get; private set; }
+    public int Hp { get; private set; }
+    public int Atk { get; private set; }
 
     protected virtual void Awake()
     {
-        _characterInfo = new CharacterInfo();
+        _characterData = new CharacterData();
     }
 
     protected virtual void OnEnable()
     {
-        InitData();
+
     }
 
     protected virtual void Start()
@@ -27,29 +31,24 @@ public abstract class Character : MonoBehaviour
 
     }
 
-    public abstract void Move();
     public abstract void Attack();
     public abstract void Die();
     public abstract void Spawn();
 
-    // 몬스터 데이터 초기화
-    public void InitData()
+    public void InitData(int index, int level)
     {
-        _characterInfo.Name = gameObject.name;
-        _characterInfo.Level = 10;
-        _characterInfo.Hp = 100;
-        _characterInfo.Atk = 10;
-        _characterInfo.Def = 10;
-        _characterInfo.IsAttack = false;
+        _characterData = Table_110_Character.Instance.DataList.Find(o => o.Index == index);
+        Name = "GoblinInst";
+        Atk = _characterData.AtkBase + level * _characterData.AtkAdd;
+        Hp = _characterData.HpBase + level * _characterData.HpAdd;
     }
 
     public void Hit(CharacterInfo characterInfo)
     {
-        int damage = characterInfo.Atk - _characterInfo.Def;
-        _characterInfo.Hp -= damage;
-        Debug.Log(_characterInfo.Name + "의 HP = " + _characterInfo.Hp);
+        Hp -= Atk;
+        Debug.Log(_characterData.Name + "의 HP = " + Hp);
 
-        if (_characterInfo.Hp <= 0)
+        if (Hp <= 0)
         {
             Die();
         }

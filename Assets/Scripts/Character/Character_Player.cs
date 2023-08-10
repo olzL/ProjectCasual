@@ -25,8 +25,6 @@ public class Character_Player : Character
 
     [SerializeField] Animator[] _aniamtor;
 
-    float _moveSpeed;
-
     protected override void Awake()
     {
         base.Awake();
@@ -39,7 +37,8 @@ public class Character_Player : Character
 
     protected override void Start()
     {
-        _moveSpeed = 20;
+        // 플레이어 데이터 초기화
+        InitData(11000001, 1);
     }
 
     /// <summary>
@@ -53,17 +52,10 @@ public class Character_Player : Character
         }
     }
 
-    public override void Move()
-    {
-        Vector2 tmp = transform.position;
-        tmp += new Vector2(_moveSpeed * Time.deltaTime, 0f);
-        transform.position = tmp;
-    }
-
     public override void Attack()
     {
         // 공격 
-        AnimatorSetInteger("aniIndex", 2);
+        AnimatorSetInteger("aniIndex", 1);
     }
 
     public override void Die()
@@ -78,6 +70,6 @@ public class Character_Player : Character
 
     protected override void Update()
     {
-        Move();
+        //Move();
     }
 }

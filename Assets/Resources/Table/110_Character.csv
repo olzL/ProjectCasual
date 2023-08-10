@@ -1,0 +1,4 @@
+﻿Index,Name,HpBase,HpAdd,AtkBase,AtkAdd,CriChance
+int,int,int,int,int,int,float
+11000001,91010001,100,10,100,10,0.1
+11010001,91010002,100,10,20,10,0
