@@ -16,11 +16,16 @@ public class Table_910_Text : TableParser<Table_910_Text, TextData>
         for (int i = 2; i < _datas.Length; i++)
         {
             string[] lineData = _datas[i].Split(",");
+            if (lineData[0] == "")
+            {
+                continue;
+            }
             TextData Data;
             Data.Index = int.Parse(lineData[0]);
             Data.Kor = lineData[1];
             Data.Eng = lineData[2];
             dataList.Add(Data);
+            dataDic.Add(Data.Index, Data);
         }
     }
 }

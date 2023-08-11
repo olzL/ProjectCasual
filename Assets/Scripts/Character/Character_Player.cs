@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Character_Player : Character
 {
@@ -42,7 +39,7 @@ public class Character_Player : Character
     }
 
     /// <summary>
-    /// aniIndex(0: Idle, 1: Walk, 2: Attack)
+    /// aniIndex(0: Walk, 1: Attack)
     /// </summary>
     public void AnimatorSetInteger(string name, int value)
     {

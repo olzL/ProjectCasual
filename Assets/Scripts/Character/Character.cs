@@ -38,7 +38,7 @@ public abstract class Character : MonoBehaviour
     public void InitData(int index, int level)
     {
         _characterData = Table_110_Character.Instance.DataList.Find(o => o.Index == index);
-        Name = "GoblinInst";
+        Name = _characterData.Name.ToString();
         Atk = _characterData.AtkBase + level * _characterData.AtkAdd;
         Hp = _characterData.HpBase + level * _characterData.HpAdd;
     }

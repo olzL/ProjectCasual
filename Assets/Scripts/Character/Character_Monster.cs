@@ -24,7 +24,7 @@ public class Character_Monster : Character
     public void Move()
     {
         Vector2 tmp = transform.position;
-        tmp -= new Vector2(StageManager.Instance.MoveSpeed * Time.deltaTime, 0f);
+        tmp -= new Vector2(Manager_Stage.Instance.MoveSpeed * Time.deltaTime, 0f);
         transform.position = tmp;
     }
 
@@ -41,7 +41,7 @@ public class Character_Monster : Character
         if (transform.position.x <= endPosX)
         {
             Die();
-            MonsterManager.Instance.RemoveMonster(gameObject.name);
+            Manager_Monster.Instance.RemoveMonster(gameObject.name);
         }
     }
 }

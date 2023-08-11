@@ -23,9 +23,16 @@ public class TableParser<T,Q> where T : class, new() where Q : struct
         get { return dataList; }
     }
 
+    protected Dictionary<int, Q> dataDic;
+    public Dictionary<int, Q> DataDic
+    {
+        get { return dataDic; }
+    }
+
     public void LoadData(string _fileName)
     {
         dataList = new List<Q>();
+        dataDic = new Dictionary<int, Q>();
         TextAsset textAsset = Resources.Load<TextAsset>("Table/" + _fileName);
         ReadData(textAsset.text.Split("\r\n"));
     }

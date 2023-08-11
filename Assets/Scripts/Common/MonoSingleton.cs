@@ -29,8 +29,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
                         var singletonObj = new GameObject();
                         _instance = singletonObj.AddComponent<T>();
                         singletonObj.name = typeof(T).ToString() + " (Singleton)";
-
-                        DontDestroyOnLoad(singletonObj);
                     }
                 }
 

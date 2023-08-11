@@ -20,6 +20,10 @@ public class Table_110_Character : TableParser<Table_110_Character, CharacterDat
         for (int i = 2; i < _datas.Length; i++)
         {
             string[] lineData = _datas[i].Split(",");
+            if (lineData[0] == "")
+            {
+                continue;
+            }
             CharacterData Data;
             Data.Index = int.Parse(lineData[0]);
             Data.Name = int.Parse(lineData[1]);
@@ -29,6 +33,7 @@ public class Table_110_Character : TableParser<Table_110_Character, CharacterDat
             Data.AtkAdd = int.Parse(lineData[5]);
             Data.CriChance = float.Parse(lineData[6]);
             dataList.Add(Data);
+            dataDic.Add(Data.Index, Data);
         }
     }
 }

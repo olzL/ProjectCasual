@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class MonsterManager : MonoSingleton<MonsterManager>
+public class Manager_Monster : MonoSingleton<Manager_Monster>
 {
     private List<Character_Monster> _monsterList;
     private int _monsterIndex;
     private Vector3 _SpawnPos;
+
+    // 임시
+    private bool _isSpawned;
+    private float _spawnTime;
+    private float _elapsedTime;
 
     private void Awake()
     {
@@ -17,6 +22,9 @@ public class MonsterManager : MonoSingleton<MonsterManager>
     {
         _monsterIndex = 0;
         _SpawnPos = new Vector3(20f, 0f, 0f);
+
+        // 임시
+        _isSpawned = true;
     }
 
     public void CreateMonster()
@@ -37,12 +45,7 @@ public class MonsterManager : MonoSingleton<MonsterManager>
         }
 
         // 임시
-        monster.InitData(11010001, 10);
-        SetMonster(monster);
-    }
-
-    private void SetMonster(Character_Monster monster)
-    {
+        monster.InitData(11010001, Manager_Stage.Instance.Level);
         monster.gameObject.name = monster.Name + "_" + _monsterIndex++;
         monster.transform.position = _SpawnPos;
     }
@@ -53,11 +56,31 @@ public class MonsterManager : MonoSingleton<MonsterManager>
         monster.gameObject.SetActive(false);
     }
 
+    // 임시
+    private void RandomSpawn()
+    {
+        _elapsedTime += Time.deltaTime;
+        if (_isSpawned)
+        {
+            _spawnTime = Random.Range(0.1f, 1.5f);
+            _isSpawned = false;
+        }
+
+        if (_elapsedTime >= _spawnTime)
+        {
+            CreateMonster();
+            _elapsedTime = 0;
+            _isSpawned = true;
+        }
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
             CreateMonster();
         }
+
+        RandomSpawn();
     }
 }

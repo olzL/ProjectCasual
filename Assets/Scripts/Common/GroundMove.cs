@@ -17,7 +17,7 @@ public class GroundMove : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(-1 * StageManager.Instance.MoveSpeed * Time.deltaTime, 0, 0);
+        transform.Translate(-1 * Manager_Stage.Instance.MoveSpeed * Time.deltaTime, 0, 0);
 
         if (transform.position.x <= endPosX)
         {

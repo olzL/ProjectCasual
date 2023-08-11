@@ -1,4 +1,8 @@
 ﻿Index,Kor,Eng
 int,string,string
+91000001,레벨 {0},Level {0}
+91000002,공격,Attack
+91000003,나가기,Exit
+91000004,게임 시작,Game Start
 91010001,플레이어,Player
 91010002,고블린,Goblin

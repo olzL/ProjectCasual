@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoSingleton<GameManager>
+public class Manager_Game : MonoSingleton<Manager_Game>
 {
-    void Start()
+    private void Awake()
     {
+        DontDestroyOnLoad(this);
         TableLoadAll();
+    }
+
+    private void Start()
+    {
+        
     }
 
     void Update()
     {
         
     }
-
 
     private void TableLoadAll()
     {
