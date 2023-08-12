@@ -11,8 +11,9 @@ public class PlayerAttack : PlayerStateMachine
 
     override public void StateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        float aniProgress = stateInfo.normalizedTime % 1.0f;
-        if (aniProgress >= 0.9f)
+        //float aniProgress = stateInfo.normalizedTime % 1.0f;
+        float aniProgress = stateInfo.normalizedTime;
+        if (aniProgress >= 1f)
         {
             Character_Player.Instance.AnimatorSetInteger("aniIndex", 0);
         }

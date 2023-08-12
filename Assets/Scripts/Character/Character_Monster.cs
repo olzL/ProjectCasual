@@ -13,7 +13,7 @@ public class Character_Monster : Character
 
     public override void Die()
     {
-        Debug.Log(gameObject.name + " Die");
+
     }
 
     public override void Spawn()

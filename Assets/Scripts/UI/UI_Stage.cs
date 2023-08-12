@@ -6,10 +6,14 @@ using UnityEngine;
 public class UI_Stage : UI_Base
 {
     #region UI Text
-    [SerializeField] TextMeshProUGUI _AttackButtonText;
-    [SerializeField] TextMeshProUGUI _ExitButtonText;
-    [SerializeField] TextMeshProUGUI _StageLevelText;
+    [SerializeField] TextMeshProUGUI _attackButtonText;
+    [SerializeField] TextMeshProUGUI _exitButtonText;
+    [SerializeField] TextMeshProUGUI _stageLevelText;
+    [SerializeField] TextMeshProUGUI _rameRateText;
     #endregion
+
+    // fps 테스트용
+    float elapsedTime;
 
     protected override void Start()
     {
@@ -19,8 +23,26 @@ public class UI_Stage : UI_Base
 
     protected override void TextInit()
     {
-        _StageLevelText.text = string.Format(TextLoader.Instance.GetText(91000001), Manager_Stage.Instance.Level);
-        _AttackButtonText.text = TextLoader.Instance.GetText(91000002);
-        _ExitButtonText.text = TextLoader.Instance.GetText(91000003);
+        _stageLevelText.text = string.Format(TextLoader.Instance.GetText(91000001), Manager_Stage.Instance.Level);
+        _attackButtonText.text = TextLoader.Instance.GetText(91000002);
+        _exitButtonText.text = TextLoader.Instance.GetText(91000003);
+    }
+
+    // fps 테스트용
+    private void FrameRateDisplay()
+    {
+        float fps = 1.0f / Time.deltaTime;
+        float ms = Time.deltaTime * 1000.0f;
+        _rameRateText.text = string.Format("{0:N1} FPS ({1:N1}ms)", fps, ms);
+    }
+
+    private void Update()
+    {
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime > 0.3f)
+        {
+            FrameRateDisplay();
+            elapsedTime = 0.0f;
+        }
     }
 }
