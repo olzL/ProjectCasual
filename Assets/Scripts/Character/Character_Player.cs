@@ -19,9 +19,7 @@ public class Character_Player : Character
             return _instance;
         }
     }
-
     public BoxCollider2D AttackBoxCollider;
-    [SerializeField] Animator[] _aniamtor;
 
     protected override void Awake()
     {
@@ -45,15 +43,11 @@ public class Character_Player : Character
     /// </summary>
     public void AnimatorSetInteger(string name, int value)
     {
-        for (int i = 0; i < _aniamtor.Length; i++)
-        {
-            _aniamtor[i].SetInteger(name, value);
-        }
+        MyAnimator.SetInteger(name, value);
     }
 
     public override void Attack()
     {
-        // АјАн 
         AnimatorSetInteger("aniIndex", 1);
     }
 

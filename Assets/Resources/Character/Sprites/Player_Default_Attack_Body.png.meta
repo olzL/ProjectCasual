@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76f34ef45d8302e48811034b8b54f0b7
+guid: 112b5c9ff381f3b428eeed9034c2fdc1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -125,11 +125,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Walk_body_0
+      name: Player_Attack_Body_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,20 +149,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21e460e7a66617c4d90f0715303b62aa
-      internalID: -395154694
+      spriteID: 495e19c94fcbe264580548d2d99182ae
+      internalID: 1746062508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_body_1
+      name: Player_Attack_Body_1
       rect:
         serializedVersion: 2
         x: 96
@@ -158,20 +170,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a06cf1988fdc4ff4b8fc8795ee37620c
-      internalID: -1445082357
+      spriteID: 7e680686a73463e4ca8622af593fd9cf
+      internalID: -1621949704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_body_2
+      name: Player_Attack_Body_2
       rect:
         serializedVersion: 2
         x: 192
@@ -179,20 +191,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 526bacb31df33c445b76777fd5fe7800
-      internalID: -1329999524
+      spriteID: acaec076a009358408a295dac425dffb
+      internalID: -1370402748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_body_3
+      name: Player_Attack_Body_3
       rect:
         serializedVersion: 2
         x: 288
@@ -200,20 +212,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aed132d746323b6468084939103fa7cb
-      internalID: 418824617
+      spriteID: de46da5820302634fb25ba878b8d6b9f
+      internalID: -36973624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_body_4
+      name: Player_Attack_Body_4
       rect:
         serializedVersion: 2
         x: 384
@@ -221,20 +233,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ec5bf9c07f89ca4e940ff24f04c3a26
-      internalID: -1565303534
+      spriteID: 107599295cc65a7498dac6399bc2ce0a
+      internalID: -1304780396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_body_5
+      name: Player_Attack_Body_5
       rect:
         serializedVersion: 2
         x: 480
@@ -242,20 +254,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61a381ab6b03a4445aab7082d214da6e
-      internalID: -850493724
+      spriteID: d20ce8243b50f9847ab5c6fb658bfdba
+      internalID: -710464185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_body_6
+      name: Player_Attack_Body_6
       rect:
         serializedVersion: 2
         x: 576
@@ -263,20 +275,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aabc93048b8537941b8b969696bc0e85
-      internalID: 1668859246
+      spriteID: f0bca56ce39d84d4bbf15f62a579b1e6
+      internalID: -2001333856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_body_7
+      name: Player_Attack_Body_7
       rect:
         serializedVersion: 2
         x: 672
@@ -284,14 +296,56 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4acc4d395bb782c49be2914c6b83de07
-      internalID: -1887549966
+      spriteID: 788349814f879cf4ca38ce4b56b0647f
+      internalID: -248402074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Attack_Body_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27273f6bb1215034899442436d642b1a
+      internalID: 501680535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Attack_Body_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb2e23e9495f77408d6a78b623af7ba
+      internalID: -194700729
       vertices: []
       indices: 
       edges: []
@@ -307,14 +361,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Walk_body_0: -395154694
-      Player_Walk_body_5: -850493724
-      Player_Walk_body_7: -1887549966
-      Player_Walk_body_2: -1329999524
-      Player_Walk_body_4: -1565303534
-      Player_Walk_body_6: 1668859246
-      Player_Walk_body_1: -1445082357
-      Player_Walk_body_3: 418824617
+      Player_Attack_Body_0: 1746062508
+      Player_Attack_Body_4: -1304780396
+      Player_Attack_Body_8: 501680535
+      Player_Attack_Body_5: -710464185
+      Player_Attack_Body_6: -2001333856
+      Player_Attack_Body_7: -248402074
+      Player_Attack_Body_3: -36973624
+      Player_Attack_Body_9: -194700729
+      Player_Attack_Body_1: -1621949704
+      Player_Attack_Body_2: -1370402748
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

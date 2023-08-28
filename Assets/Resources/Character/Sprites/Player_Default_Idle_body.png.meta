@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 00d25e4aaa93e2d42bf3fe248c2c3037
+guid: d5fcddb487c01424098154b310e6537a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -125,11 +125,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Walk_Hair_1_0
+      name: Player_Idle_body_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e05f333951945743a694c51aa86d74b
-      internalID: 608408524
+      spriteID: df7bf9098831ad943b995e34259296e9
+      internalID: 1696345988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_Hair_1_1
+      name: Player_Idle_body_1
       rect:
         serializedVersion: 2
         x: 96
@@ -164,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 922b2050ad0bb584e92abd9619afdd44
-      internalID: -1195688088
+      spriteID: d3a4f50c02410cf4c8f131935282e7c0
+      internalID: -1173523472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_Hair_1_2
+      name: Player_Idle_body_2
       rect:
         serializedVersion: 2
         x: 192
@@ -185,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f07b5acc16f588f4e93a8ade10e5479c
-      internalID: -2123754539
+      spriteID: d3576125436096b419a3652a35d475a6
+      internalID: 604356779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_Hair_1_3
+      name: Player_Idle_body_3
       rect:
         serializedVersion: 2
         x: 288
@@ -206,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f954844052ee7b47956e623c640eeb6
-      internalID: 1013612482
+      spriteID: baaa287822852c44884bd1b83739df76
+      internalID: 879288286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_Hair_1_4
+      name: Player_Idle_body_4
       rect:
         serializedVersion: 2
         x: 384
@@ -227,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5e5ac670555cb048a1582902cd6f558
-      internalID: -2074558456
+      spriteID: 7fb236bbf6467914d807275193c5db3d
+      internalID: -437065092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_Hair_1_5
+      name: Player_Idle_body_5
       rect:
         serializedVersion: 2
         x: 480
@@ -248,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7d4707f1b54c814f8fc7381a325c766
-      internalID: -825880159
+      spriteID: 26bdb54584e826a4186aca7bbc5047a1
+      internalID: 2026970180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_Hair_1_6
+      name: Player_Idle_body_6
       rect:
         serializedVersion: 2
         x: 576
@@ -269,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1c3f897125cbc34b8563f0c33365b2c
-      internalID: 1771811871
+      spriteID: 967bd579d95bf3842ae30ae00500233e
+      internalID: 383063250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk_Hair_1_7
+      name: Player_Idle_body_7
       rect:
         serializedVersion: 2
         x: 672
@@ -290,8 +302,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33f837da1672a544f8f9dd3ade712253
-      internalID: 895537360
+      spriteID: b78b027a46401ae4db9245cb606c1f1c
+      internalID: 1807941308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_body_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8139688081ce4449f9e86f065c0f50
+      internalID: -1787883141
       vertices: []
       indices: 
       edges: []
@@ -307,14 +340,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Walk_Hair_1_2: -2123754539
-      Player_Walk_Hair_1_6: 1771811871
-      Player_Walk_Hair_1_3: 1013612482
-      Player_Walk_Hair_1_4: -2074558456
-      Player_Walk_Hair_1_7: 895537360
-      Player_Walk_Hair_1_0: 608408524
-      Player_Walk_Hair_1_1: -1195688088
-      Player_Walk_Hair_1_5: -825880159
+      Player_Idle_body_1: -1173523472
+      Player_Idle_body_8: -1787883141
+      Player_Idle_body_7: 1807941308
+      Player_Idle_body_0: 1696345988
+      Player_Idle_body_4: -437065092
+      Player_Idle_body_5: 2026970180
+      Player_Idle_body_2: 604356779
+      Player_Idle_body_3: 879288286
+      Player_Idle_body_6: 383063250
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

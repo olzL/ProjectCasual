@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 112b5c9ff381f3b428eeed9034c2fdc1
+guid: 00d25e4aaa93e2d42bf3fe248c2c3037
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -125,11 +125,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Attack_Body_0
+      name: Player_Walk_Hair_1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,20 +149,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 495e19c94fcbe264580548d2d99182ae
-      internalID: 1746062508
+      spriteID: 8e05f333951945743a694c51aa86d74b
+      internalID: 608408524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Attack_Body_1
+      name: Player_Walk_Hair_1_1
       rect:
         serializedVersion: 2
         x: 96
@@ -158,20 +170,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e680686a73463e4ca8622af593fd9cf
-      internalID: -1621949704
+      spriteID: 922b2050ad0bb584e92abd9619afdd44
+      internalID: -1195688088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Attack_Body_2
+      name: Player_Walk_Hair_1_2
       rect:
         serializedVersion: 2
         x: 192
@@ -179,20 +191,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acaec076a009358408a295dac425dffb
-      internalID: -1370402748
+      spriteID: f07b5acc16f588f4e93a8ade10e5479c
+      internalID: -2123754539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Attack_Body_3
+      name: Player_Walk_Hair_1_3
       rect:
         serializedVersion: 2
         x: 288
@@ -200,20 +212,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de46da5820302634fb25ba878b8d6b9f
-      internalID: -36973624
+      spriteID: 9f954844052ee7b47956e623c640eeb6
+      internalID: 1013612482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Attack_Body_4
+      name: Player_Walk_Hair_1_4
       rect:
         serializedVersion: 2
         x: 384
@@ -221,20 +233,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 107599295cc65a7498dac6399bc2ce0a
-      internalID: -1304780396
+      spriteID: a5e5ac670555cb048a1582902cd6f558
+      internalID: -2074558456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Attack_Body_5
+      name: Player_Walk_Hair_1_5
       rect:
         serializedVersion: 2
         x: 480
@@ -242,20 +254,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d20ce8243b50f9847ab5c6fb658bfdba
-      internalID: -710464185
+      spriteID: d7d4707f1b54c814f8fc7381a325c766
+      internalID: -825880159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Attack_Body_6
+      name: Player_Walk_Hair_1_6
       rect:
         serializedVersion: 2
         x: 576
@@ -263,20 +275,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0bca56ce39d84d4bbf15f62a579b1e6
-      internalID: -2001333856
+      spriteID: a1c3f897125cbc34b8563f0c33365b2c
+      internalID: 1771811871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Attack_Body_7
+      name: Player_Walk_Hair_1_7
       rect:
         serializedVersion: 2
         x: 672
@@ -284,56 +296,14 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 788349814f879cf4ca38ce4b56b0647f
-      internalID: -248402074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Attack_Body_8
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27273f6bb1215034899442436d642b1a
-      internalID: 501680535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Attack_Body_9
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fb2e23e9495f77408d6a78b623af7ba
-      internalID: -194700729
+      spriteID: 33f837da1672a544f8f9dd3ade712253
+      internalID: 895537360
       vertices: []
       indices: 
       edges: []
@@ -349,16 +319,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Attack_Body_0: 1746062508
-      Player_Attack_Body_4: -1304780396
-      Player_Attack_Body_8: 501680535
-      Player_Attack_Body_5: -710464185
-      Player_Attack_Body_6: -2001333856
-      Player_Attack_Body_7: -248402074
-      Player_Attack_Body_3: -36973624
-      Player_Attack_Body_9: -194700729
-      Player_Attack_Body_1: -1621949704
-      Player_Attack_Body_2: -1370402748
+      Player_Walk_Hair_1_2: -2123754539
+      Player_Walk_Hair_1_6: 1771811871
+      Player_Walk_Hair_1_3: 1013612482
+      Player_Walk_Hair_1_4: -2074558456
+      Player_Walk_Hair_1_7: 895537360
+      Player_Walk_Hair_1_0: 608408524
+      Player_Walk_Hair_1_1: -1195688088
+      Player_Walk_Hair_1_5: -825880159
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

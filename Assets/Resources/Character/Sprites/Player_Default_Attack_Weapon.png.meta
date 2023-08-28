@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d5fcddb487c01424098154b310e6537a
+guid: 325dacd99e524d64a912a1b5e8c62403
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -125,11 +125,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle_body_0
+      name: Player_Attack_Sword_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df7bf9098831ad943b995e34259296e9
-      internalID: 1696345988
+      spriteID: b6ad33ef537cceb4fa3fe56b391040bd
+      internalID: -1219959926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_body_1
+      name: Player_Attack_Sword_1
       rect:
         serializedVersion: 2
         x: 96
@@ -164,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3a4f50c02410cf4c8f131935282e7c0
-      internalID: -1173523472
+      spriteID: 7d81b1f0dc797c8419cadafdc621b1e8
+      internalID: 966112287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_body_2
+      name: Player_Attack_Sword_2
       rect:
         serializedVersion: 2
         x: 192
@@ -185,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3576125436096b419a3652a35d475a6
-      internalID: 604356779
+      spriteID: 6b1cb17ff76a83d4eb5b818ade2895b3
+      internalID: -1111399238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_body_3
+      name: Player_Attack_Sword_3
       rect:
         serializedVersion: 2
         x: 288
@@ -206,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baaa287822852c44884bd1b83739df76
-      internalID: 879288286
+      spriteID: 45ef65304ceaef542b2ce63076870543
+      internalID: -1652222995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_body_4
+      name: Player_Attack_Sword_4
       rect:
         serializedVersion: 2
         x: 384
@@ -227,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fb236bbf6467914d807275193c5db3d
-      internalID: -437065092
+      spriteID: 053a372bb088b954faa60f9aa37f3346
+      internalID: -234889078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_body_5
+      name: Player_Attack_Sword_5
       rect:
         serializedVersion: 2
         x: 480
@@ -248,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26bdb54584e826a4186aca7bbc5047a1
-      internalID: 2026970180
+      spriteID: b38d05cd90c08ea46ad0a1c3764cb4d2
+      internalID: 1397520415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_body_6
+      name: Player_Attack_Sword_6
       rect:
         serializedVersion: 2
         x: 576
@@ -269,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 967bd579d95bf3842ae30ae00500233e
-      internalID: 383063250
+      spriteID: 80b0fbac39da0e844a99c04ff3ae835c
+      internalID: -970233760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_body_7
+      name: Player_Attack_Sword_7
       rect:
         serializedVersion: 2
         x: 672
@@ -290,14 +302,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b78b027a46401ae4db9245cb606c1f1c
-      internalID: 1807941308
+      spriteID: c5cd7200a5ac7174ba7c4fd864825625
+      internalID: 1484194839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_body_8
+      name: Player_Attack_Sword_8
       rect:
         serializedVersion: 2
         x: 768
@@ -311,8 +323,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f8139688081ce4449f9e86f065c0f50
-      internalID: -1787883141
+      spriteID: 137a76e3f343f5e40814469c951a8586
+      internalID: -929630261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Attack_Sword_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197ed1166ad341b4982a37d5cee9f4ca
+      internalID: -1059219630
       vertices: []
       indices: 
       edges: []
@@ -328,15 +361,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Idle_body_1: -1173523472
-      Player_Idle_body_8: -1787883141
-      Player_Idle_body_7: 1807941308
-      Player_Idle_body_0: 1696345988
-      Player_Idle_body_4: -437065092
-      Player_Idle_body_5: 2026970180
-      Player_Idle_body_2: 604356779
-      Player_Idle_body_3: 879288286
-      Player_Idle_body_6: 383063250
+      Player_Attack_Sword_0: -1219959926
+      Player_Attack_Sword_7: 1484194839
+      Player_Attack_Sword_6: -970233760
+      Player_Attack_Sword_8: -929630261
+      Player_Attack_Sword_3: -1652222995
+      Player_Attack_Sword_5: 1397520415
+      Player_Attack_Sword_9: -1059219630
+      Player_Attack_Sword_1: 966112287
+      Player_Attack_Sword_2: -1111399238
+      Player_Attack_Sword_4: -234889078
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

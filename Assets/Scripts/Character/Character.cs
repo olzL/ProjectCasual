@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
@@ -11,6 +12,7 @@ public abstract class Character : MonoBehaviour
     public int Hp { get; private set; }
     public int Atk { get; private set; }
     public BoxCollider2D HitBoxCollider { get; private set; }
+    public Animator MyAnimator { get; private set; }
 
     protected virtual void Awake()
     {
@@ -19,6 +21,10 @@ public abstract class Character : MonoBehaviour
         if (HitBoxCollider == null)
         {
             HitBoxCollider = gameObject.AddComponent<BoxCollider2D>();
+        }
+        if (MyAnimator == null)
+        {
+            MyAnimator = gameObject.AddComponent<Animator>();
         }
     }
 
@@ -48,6 +54,7 @@ public abstract class Character : MonoBehaviour
         Atk = _characterData.AtkBase + level * _characterData.AtkAdd;
         Hp = _characterData.HpBase + level * _characterData.HpAdd;
         HitBoxCollider.size = new Vector2(_characterData.ScaleX, _characterData.ScaleY);
+        MyAnimator.runtimeAnimatorController = Resources.Load<AnimatorController>("Character/AnimatorControllers/" + _characterData.AnimatorName);
     }
 
     public void Hit(Character attackChar)

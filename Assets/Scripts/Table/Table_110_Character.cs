@@ -13,6 +13,7 @@ public struct CharacterData
     public float CriChance;
     public float ScaleX;
     public float ScaleY;
+    public string AnimatorName;
 }
 
 public class Table_110_Character : TableParser<Table_110_Character, CharacterData>
@@ -36,6 +37,7 @@ public class Table_110_Character : TableParser<Table_110_Character, CharacterDat
             Data.CriChance = float.Parse(lineData[6]);
             Data.ScaleX = float.Parse(lineData[7]);
             Data.ScaleY = float.Parse(lineData[8]);
+            Data.AnimatorName = lineData[9];
             dataList.Add(Data);
             dataDic.Add(Data.Index, Data);
         }
