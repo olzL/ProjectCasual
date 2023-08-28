@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character_Monster : Character
 {
-    private float endPosX;
+    private float _endPosX;
 
     public override void Attack()
     {
@@ -13,7 +13,7 @@ public class Character_Monster : Character
 
     public override void Die()
     {
-
+        Manager_Monster.Instance.RemoveMonster(gameObject.name);
     }
 
     public override void Spawn()
@@ -31,17 +31,16 @@ public class Character_Monster : Character
     protected override void Start()
     {
         base.Start();
-        endPosX = -Camera.main.orthographicSize * ((float)Screen.width / Screen.height);
+        _endPosX = -Camera.main.orthographicSize * ((float)Screen.width / Screen.height);
     }
 
     protected override void Update()
     {
         Move();
 
-        if (transform.position.x <= endPosX)
+        if (transform.position.x <= _endPosX)
         {
             Die();
-            Manager_Monster.Instance.RemoveMonster(gameObject.name);
         }
     }
 }

@@ -35,7 +35,7 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
     {
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime >= 5f)
+        if (elapsedTime >= 10f)
         {
             LevelUp();
             elapsedTime = 0f;

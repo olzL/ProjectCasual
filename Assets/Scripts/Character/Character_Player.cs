@@ -20,6 +20,7 @@ public class Character_Player : Character
         }
     }
 
+    public BoxCollider2D AttackBoxCollider;
     [SerializeField] Animator[] _aniamtor;
 
     protected override void Awake()
@@ -34,6 +35,7 @@ public class Character_Player : Character
 
     protected override void Start()
     {
+        base.Start();
         // 플레이어 데이터 초기화
         InitData(11000001, 1);
     }

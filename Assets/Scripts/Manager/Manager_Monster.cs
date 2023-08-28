@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class Manager_Monster : MonoSingleton<Manager_Monster>
 {
+    public List<Character_Monster> AliveMonsterList { get { return _aliveMonsterList; } }
+
+    private List<Character_Monster> _aliveMonsterList;
     private List<Character_Monster> _monsterList;
     private int _monsterIndex;
     private Vector3 _SpawnPos;
@@ -17,7 +21,9 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
     private void Awake()
     {
         _monsterList = new List<Character_Monster>();
+        _aliveMonsterList = new List<Character_Monster>();
     }
+
     void Start()
     {
         _monsterIndex = 0;
@@ -48,12 +54,14 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
         monster.InitData(11010001, Manager_Stage.Instance.Level);
         monster.gameObject.name = monster.Name + "_" + _monsterIndex++;
         monster.transform.position = _SpawnPos;
+        _aliveMonsterList.Add(monster);
     }
 
     public void RemoveMonster(string name)
     {
         Character_Monster monster = _monsterList.Find(o => o.gameObject.name == name);
         monster.gameObject.SetActive(false);
+        _aliveMonsterList.Remove(monster);
     }
 
     // юс╫ц

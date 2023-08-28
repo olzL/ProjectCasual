@@ -11,6 +11,8 @@ public struct CharacterData
     public int AtkBase;
     public int AtkAdd;
     public float CriChance;
+    public float ScaleX;
+    public float ScaleY;
 }
 
 public class Table_110_Character : TableParser<Table_110_Character, CharacterData>
@@ -32,6 +34,8 @@ public class Table_110_Character : TableParser<Table_110_Character, CharacterDat
             Data.AtkBase = int.Parse(lineData[4]);
             Data.AtkAdd = int.Parse(lineData[5]);
             Data.CriChance = float.Parse(lineData[6]);
+            Data.ScaleX = float.Parse(lineData[7]);
+            Data.ScaleY = float.Parse(lineData[8]);
             dataList.Add(Data);
             dataDic.Add(Data.Index, Data);
         }
