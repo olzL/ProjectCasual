@@ -38,31 +38,18 @@ public class Character_Player : Character
         InitData(11000001, 1);
     }
 
-    /// <summary>
-    /// aniIndex(0: Walk, 1: Attack)
-    /// </summary>
-    public void AnimatorSetInteger(string name, int value)
-    {
-        MyAnimator.SetInteger(name, value);
-    }
-
     public override void Attack()
     {
-        AnimatorSetInteger("aniIndex", 1);
+        MyAnimator.SetInteger("aniIndex", 1);
     }
 
-    public override void Die()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void Spawn()
+    public override void Death()
     {
         throw new NotImplementedException();
     }
 
     protected override void Update()
     {
-        //Move();
+
     }
 }

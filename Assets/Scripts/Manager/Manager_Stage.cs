@@ -15,15 +15,29 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
 
     private void Start()
     {
-        MoveSpeed = 5.0f;
+        // 10000001: 스테이지 기본 속도
+        MoveSpeed = Table_101_GlobalValue.Instance.DataDic[10000001].FloatValue; 
         Level = 1;
     }
 
     private void LevelUp()
     {
         Level++;
-        MoveSpeed += 3.0f;
+
+        // 10000002: 스테이지 레벨당 증가 속도
+        MoveSpeed += Table_101_GlobalValue.Instance.DataDic[10000002].FloatValue; 
         LevelInit();
+
+        // 10000003: 애니메이션 최대 증가 속도
+        if (Level <= Table_101_GlobalValue.Instance.DataDic[10000003].FloatValue)
+        {
+            List<Character_Monster> aliveMonsterList = Manager_Monster.Instance.AliveMonsterList;
+            for (int i = 0; i < aliveMonsterList.Count; i++)
+            {
+                aliveMonsterList[i].SetWalkAnimationSpeed(Level);
+            }
+            Character_Player.Instance.SetWalkAnimationSpeed(Level);
+        }
     }
 
     public void EndStage()
@@ -35,7 +49,8 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
     {
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime >= 10f)
+        // 10000004: 스테이지 레벨업 간격(s)
+        if (elapsedTime >= Table_101_GlobalValue.Instance.DataDic[10000004].FloatValue)
         {
             LevelUp();
             elapsedTime = 0f;

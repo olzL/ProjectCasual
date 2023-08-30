@@ -29,6 +29,7 @@ public class Manager_Game : MonoSingleton<Manager_Game>
     {
         Table_110_Character.Instance.LoadData("110_Character");
         Table_910_Text.Instance.LoadData("910_Text");
+        Table_101_GlobalValue.Instance.LoadData("101_GlobalValue");
     }
 
     public void StartStage()

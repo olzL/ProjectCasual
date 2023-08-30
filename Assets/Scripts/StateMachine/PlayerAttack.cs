@@ -27,8 +27,7 @@ public class PlayerAttack : PlayerStateMachine
                     monsterPool[i].Hit(Player);
                 }
             }
-
-            Player.AnimatorSetInteger("aniIndex", 0);
+            animator.SetInteger("aniIndex", 0);
         }
     }
 

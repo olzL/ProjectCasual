@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    CharacterData _characterData;
-
     public string Name { get; private set; }
     public int Hp { get; private set; }
     public int Atk { get; private set; }
     public BoxCollider2D HitBoxCollider { get; private set; }
+
+    /// <summary>
+    /// aniIndex(0: Walk, 1: Attack, 2: Death)
+    /// </summary>
     public Animator MyAnimator { get; private set; }
+
+    private CharacterData _characterData;
 
     protected virtual void Awake()
     {
@@ -44,8 +44,7 @@ public abstract class Character : MonoBehaviour
     }
 
     public abstract void Attack();
-    public abstract void Die();
-    public abstract void Spawn();
+    public abstract void Death();
 
     public void InitData(int index, int level)
     {
@@ -54,7 +53,13 @@ public abstract class Character : MonoBehaviour
         Atk = _characterData.AtkBase + level * _characterData.AtkAdd;
         Hp = _characterData.HpBase + level * _characterData.HpAdd;
         HitBoxCollider.size = new Vector2(_characterData.ScaleX, _characterData.ScaleY);
-        MyAnimator.runtimeAnimatorController = Resources.Load<AnimatorController>("Character/AnimatorControllers/" + _characterData.AnimatorName);
+        MyAnimator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Character/AnimatorControllers/" + _characterData.AnimatorName);
+        MyAnimator.speed = Manager_Stage.Instance.Level;
+    }
+
+    public void SetWalkAnimationSpeed(float speed)
+    {
+        MyAnimator.SetFloat("walkSpeed", speed);
     }
 
     public void Hit(Character attackChar)
@@ -64,7 +69,7 @@ public abstract class Character : MonoBehaviour
 
         if (Hp <= 0)
         {
-            Die();
+            Death();
         }
     }
 }

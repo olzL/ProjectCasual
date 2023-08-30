@@ -47,7 +47,7 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
         }
         else
         {
-            monster.gameObject.SetActive(true);
+            monster.Respawn();
         }
 
         // юс╫ц
@@ -60,7 +60,6 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
     public void RemoveMonster(string name)
     {
         Character_Monster monster = _monsterList.Find(o => o.gameObject.name == name);
-        monster.gameObject.SetActive(false);
         _aliveMonsterList.Remove(monster);
     }
 
