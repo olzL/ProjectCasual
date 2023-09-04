@@ -7,34 +7,47 @@ using UnityEngine.SceneManagement;
 
 public class Manager_Stage : MonoSingleton<Manager_Stage>
 {
-    public float MoveSpeed { get; private set; } // 맵 및 몬스터 이동 속도
-    public int Level { get; private set; }       // 스테이지 레벨
-    public Action LevelInit;
+    public float StageSpeed { get; private set; } // 맵 및 몬스터 이동 속도
+    public int StageLevel { get; private set; }       // 스테이지 레벨
+    public Action LevelInit;                     // 레벨업 시 실행될 함수들
 
-    private float elapsedTime;
+    private float _elapsedTime;
+    private float _stageSpeedBase;
+    private float _stageSpeedAdd;
+    private float _aniSpeedMax;
+    private float _levelUpInterval;
+
+    private Dictionary<int, GlobalValueData> _globalValueDic;
 
     private void Start()
     {
-        MoveSpeed = Table_101_GlobalValue.Instance.DataDic[10000001].FloatValue; // 10000001: 스테이지 기본 속도
-        Level = 1;
+        _globalValueDic = Table_101_GlobalValue.Instance.DataDic;
+
+        _stageSpeedBase = _globalValueDic[10000001].FloatValue;
+        _stageSpeedAdd = _globalValueDic[10000002].FloatValue;
+        _aniSpeedMax = _globalValueDic[10000003].FloatValue;
+        _levelUpInterval = _globalValueDic[10000004].FloatValue;
+
+        StageSpeed = _stageSpeedBase;
+        StageLevel = 1;
     }
 
     private void LevelUp()
     {
-        Level++;
+        StageLevel++;
         
-        MoveSpeed += Table_101_GlobalValue.Instance.DataDic[10000002].FloatValue; // 10000002: 스테이지 레벨당 증가 속도
+        StageSpeed += _stageSpeedAdd;
         LevelInit();
         
-        if (Level <= Table_101_GlobalValue.Instance.DataDic[10000003].FloatValue) // 10000003: 애니메이션 최대 증가 속도
-        {
-            List<Character_Monster> aliveMonsterList = Manager_Monster.Instance.AliveMonsterList;
-            for (int i = 0; i < aliveMonsterList.Count; i++)
-            {
-                aliveMonsterList[i].SetWalkAnimationSpeed(Level);
-            }
-            Character_Player.Instance.SetWalkAnimationSpeed(Level);
-        }
+        //if (StageLevel <= _aniSpeedMax)
+        //{
+        //    List<Character_Monster> aliveMonsterList = Manager_Monster.Instance.AliveMonsterList;
+        //    for (int i = 0; i < aliveMonsterList.Count; i++)
+        //    {
+        //        aliveMonsterList[i].SetWalkAnimationSpeed(StageLevel);
+        //    }
+        //    Character_Player.Instance.SetWalkAnimationSpeed(StageLevel);
+        //}
     }
 
     public void EndStage()
@@ -44,12 +57,12 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
+        _elapsedTime += Time.deltaTime;
         
-        if (elapsedTime >= Table_101_GlobalValue.Instance.DataDic[10000004].FloatValue)  // 10000004: 스테이지 레벨업 간격(s)
+        if (_elapsedTime >= _levelUpInterval)
         {
             LevelUp();
-            elapsedTime = 0f;
+            _elapsedTime = 0f;
         }
     }
 }

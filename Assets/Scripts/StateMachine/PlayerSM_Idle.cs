@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdle : PlayerStateMachine
+public class PlayerSM_Idle : PlayerStateMachine
 {
     override public void StateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

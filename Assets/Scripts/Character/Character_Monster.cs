@@ -50,7 +50,12 @@ public class Character_Monster : Character
     public void Move()
     {
         Vector2 tmp = transform.position;
-        tmp -= new Vector2(Manager_Stage.Instance.MoveSpeed * Time.deltaTime, 0f);
+        tmp -= new Vector2(Manager_Stage.Instance.StageSpeed * Time.deltaTime, 0f);
         transform.position = tmp;
+    }
+
+    protected override void StageLevelUp()
+    {
+        WalkAnimationSpeedUp();
     }
 }

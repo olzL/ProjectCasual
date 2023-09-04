@@ -24,7 +24,7 @@ public class UI_Stage : UI_Base
 
     protected override void TextInit()
     {
-        _stageLevelText.text = string.Format(TextLoader.Instance.GetText(91000001), Manager_Stage.Instance.Level);
+        _stageLevelText.text = string.Format(TextLoader.Instance.GetText(91000001), Manager_Stage.Instance.StageLevel);
         _attackButtonText.text = TextLoader.Instance.GetText(91000002);
         _exitButtonText.text = TextLoader.Instance.GetText(91000003);
         _jumpButtonText.text = TextLoader.Instance.GetText(91000004);

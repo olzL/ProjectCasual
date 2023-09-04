@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : PlayerStateMachine
+public class PlayerSM_Attack : PlayerStateMachine
 {
     override public void StateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -11,8 +11,6 @@ public class PlayerAttack : PlayerStateMachine
 
     override public void StateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //float aniProgress = stateInfo.normalizedTime % 1.0f;
-
         BoxCollider2D playerAttackBox = Player.AttackBoxCollider;
         List<Character_Monster> monsterPool = Manager_Monster.Instance.AliveMonsterList;
 
@@ -23,7 +21,6 @@ public class PlayerAttack : PlayerStateMachine
             {
                 if (playerAttackBox.bounds.Intersects(monsterPool[i].HitBoxCollider.bounds))
                 {
-                    Debug.LogFormat(" \"{0}\"에게 공격 성공 (데미지: {1})", monsterPool[i].name, Player.Atk);
                     monsterPool[i].Hit(Player);
                 }
             }
@@ -33,6 +30,6 @@ public class PlayerAttack : PlayerStateMachine
 
     override public void StateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("공격 종료");
+
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWalking : PlayerStateMachine
+public class PlayerSM_Walk : PlayerStateMachine
 {
     override public void StateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

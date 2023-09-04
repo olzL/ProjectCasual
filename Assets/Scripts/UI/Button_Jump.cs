@@ -8,6 +8,6 @@ public class Button_Jump: UI_Button
 {
     public override void OnPointerDown(PointerEventData eventData)
     {
-        Character_Player.Instance.JumpButtonClick();
+        Character_Player.Instance.JumpClick();
     }
 }

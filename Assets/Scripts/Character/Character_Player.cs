@@ -19,10 +19,23 @@ public class Character_Player : Character
             return _instance;
         }
     }
+    public float Gravity { get { return _gravity; } }
+    public float JumpMaxHeight { get { return _jumpMaxHeight; } }
+    public float VerticalSpeed
+    {
+        get { return _verticalSpeed; }
+        set { _verticalSpeed = value; }
+    }
     public BoxCollider2D AttackBoxCollider;
-    private float _jumpVelocity;
+
+    [SerializeField]
+    private float _jumpSpeed;
+    [SerializeField]
+    private float _jumpMaxHeight;
+    [SerializeField]
     private float _gravity;
-    public float _verticalVelocity;
+    [SerializeField]
+    private float _verticalSpeed;
 
     protected override void Awake()
     {
@@ -37,45 +50,37 @@ public class Character_Player : Character
     protected override void Start()
     {
         base.Start();
-        // 플레이어 데이터 초기화
         InitData(11000001, 1);
-        
-        _jumpVelocity = Table_101_GlobalValue.Instance.DataDic[10000005].FloatValue; // 10000005: 플레이어 캐릭터 점프 속도
-        _gravity = Table_101_GlobalValue.Instance.DataDic[10000006].FloatValue;      // 10000006: 플레이어 캐릭터 점프 중력
-        _verticalVelocity = 0f;
+
+        _jumpSpeed = _globalValueDic[10000005].FloatValue;
+        _jumpMaxHeight = _globalValueDic[10000007].FloatValue;
+        VerticalSpeed = 0f;
+
+        StageLevelUp();
     }
 
-    private void Update()
-    {
-        Jump();
-    }
-
-    public void AttackButtonClick()
+    public void AttackClick()
     {
         MyAnimator.SetInteger("aniIndex", 1);
     }
 
-    public void JumpButtonClick()
+    public void JumpClick()
     {
-        if (_verticalVelocity == 0f)
+        if (VerticalSpeed == 0f)
         {
-            _verticalVelocity = _jumpVelocity;
+            VerticalSpeed = _jumpSpeed;
             MyAnimator.SetInteger("aniIndex", 3);
         }
     }
 
-    private void Jump()
+    protected override void StageLevelUp()
     {
-        _verticalVelocity -= _gravity * Time.deltaTime;
+        float gravityBase = _globalValueDic[10000006].FloatValue;
+        float gravityAdd  = _globalValueDic[10000008].FloatValue;
+        int stageLevel = Manager_Stage.Instance.StageLevel;
 
-        transform.position += new Vector3(0f, _verticalVelocity * Time.deltaTime, 0f);
-
-        if (transform.position.y < 0f)
-        {
-            transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
-            _verticalVelocity = 0f;
-            MyAnimator.SetInteger("aniIndex", 0);
-        }
+        _gravity = gravityBase + stageLevel * gravityAdd;
+        WalkAnimationSpeedUp();
     }
 
     public override void Death()

@@ -18,6 +18,8 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
     private float _spawnTime;
     private float _elapsedTime;
 
+    private Dictionary<int, GlobalValueData> _globalValueDic;
+
     private void Awake()
     {
         _monsterList = new List<Character_Monster>();
@@ -51,7 +53,7 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
         }
 
         // юс╫ц
-        monster.InitData(11010001, Manager_Stage.Instance.Level);
+        monster.InitData(11010001, Manager_Stage.Instance.StageLevel);
         monster.gameObject.name = monster.Name + "_" + _monsterIndex++;
         monster.transform.position = _SpawnPos;
         _aliveMonsterList.Add(monster);
