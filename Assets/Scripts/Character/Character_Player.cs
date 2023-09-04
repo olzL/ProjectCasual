@@ -20,6 +20,9 @@ public class Character_Player : Character
         }
     }
     public BoxCollider2D AttackBoxCollider;
+    private float _jumpVelocity;
+    private float _gravity;
+    public float _verticalVelocity;
 
     protected override void Awake()
     {
@@ -36,20 +39,47 @@ public class Character_Player : Character
         base.Start();
         // 플레이어 데이터 초기화
         InitData(11000001, 1);
+        
+        _jumpVelocity = Table_101_GlobalValue.Instance.DataDic[10000005].FloatValue; // 10000005: 플레이어 캐릭터 점프 속도
+        _gravity = Table_101_GlobalValue.Instance.DataDic[10000006].FloatValue;      // 10000006: 플레이어 캐릭터 점프 중력
+        _verticalVelocity = 0f;
     }
 
-    public override void Attack()
+    private void Update()
+    {
+        Jump();
+    }
+
+    public void AttackButtonClick()
     {
         MyAnimator.SetInteger("aniIndex", 1);
+    }
+
+    public void JumpButtonClick()
+    {
+        if (_verticalVelocity == 0f)
+        {
+            _verticalVelocity = _jumpVelocity;
+            MyAnimator.SetInteger("aniIndex", 3);
+        }
+    }
+
+    private void Jump()
+    {
+        _verticalVelocity -= _gravity * Time.deltaTime;
+
+        transform.position += new Vector3(0f, _verticalVelocity * Time.deltaTime, 0f);
+
+        if (transform.position.y < 0f)
+        {
+            transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+            _verticalVelocity = 0f;
+            MyAnimator.SetInteger("aniIndex", 0);
+        }
     }
 
     public override void Death()
     {
         throw new NotImplementedException();
-    }
-
-    protected override void Update()
-    {
-
     }
 }

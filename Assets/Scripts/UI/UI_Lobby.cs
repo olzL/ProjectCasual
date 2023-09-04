@@ -14,7 +14,7 @@ public class UI_Lobby : UI_Base
 
     protected override void TextInit() 
     {
-        _startButtonText.text = TextLoader.Instance.GetText(91000004);
+        _startButtonText.text = TextLoader.Instance.GetText(91000005);
     }
 
     void Update()

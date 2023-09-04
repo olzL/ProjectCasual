@@ -7,6 +7,7 @@ public class UI_Stage : UI_Base
 {
     #region UI Text
     [SerializeField] TextMeshProUGUI _attackButtonText;
+    [SerializeField] TextMeshProUGUI _jumpButtonText;
     [SerializeField] TextMeshProUGUI _exitButtonText;
     [SerializeField] TextMeshProUGUI _stageLevelText;
     [SerializeField] TextMeshProUGUI _rameRateText;
@@ -26,6 +27,7 @@ public class UI_Stage : UI_Base
         _stageLevelText.text = string.Format(TextLoader.Instance.GetText(91000001), Manager_Stage.Instance.Level);
         _attackButtonText.text = TextLoader.Instance.GetText(91000002);
         _exitButtonText.text = TextLoader.Instance.GetText(91000003);
+        _jumpButtonText.text = TextLoader.Instance.GetText(91000004);
     }
 
     // fps 테스트용

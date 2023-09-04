@@ -4,10 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Button_Attack : UI_Button
+public class Button_Jump: UI_Button
 {
     public override void OnPointerDown(PointerEventData eventData)
     {
-        Character_Player.Instance.AttackButtonClick();
+        Character_Player.Instance.JumpButtonClick();
     }
 }

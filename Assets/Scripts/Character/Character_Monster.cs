@@ -9,6 +9,11 @@ public class Character_Monster : Character
     private float _endPosX;
     private bool _isAlive;
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -16,9 +21,17 @@ public class Character_Monster : Character
         _endPosX = -Camera.main.orthographicSize * ((float)Screen.width / Screen.height) -1;
     }
 
-    public override void Attack()
+    private void Update()
     {
-        throw new System.NotImplementedException();
+        if (_isAlive == true)
+        {
+            Move();
+        }
+
+        if (transform.position.x <= _endPosX)
+        {
+            Death();
+        }
     }
 
     public override void Death()
@@ -39,18 +52,5 @@ public class Character_Monster : Character
         Vector2 tmp = transform.position;
         tmp -= new Vector2(Manager_Stage.Instance.MoveSpeed * Time.deltaTime, 0f);
         transform.position = tmp;
-    }
-
-    protected override void Update()
-    {
-        if (_isAlive == true)
-        {
-            Move();
-        }
-
-        if (transform.position.x <= _endPosX)
-        {
-            Death();
-        }
     }
 }
