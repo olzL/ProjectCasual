@@ -6,12 +6,11 @@ public abstract class Character : MonoBehaviour
     public string Name { get; private set; }
     public int Hp { get; private set; }
     public int Atk { get; private set; }
-    public BoxCollider2D HitBoxCollider { get; private set; }
-
     /// <summary>
     /// aniIndex(0: Walk, 1: Attack, 2: Death, 3: Jump)
     /// </summary>
     public Animator MyAnimator { get; private set; }
+    public BoxCollider2D HitBoxCollider { get; private set; }
 
     protected Dictionary<int, GlobalValueData> _globalValueDic;
 
@@ -46,7 +45,11 @@ public abstract class Character : MonoBehaviour
         Manager_Stage.Instance.LevelInit += StageLevelUp;
     }
 
+    protected virtual void StageLevelUp() { }
+
     public abstract void Death();
+
+
 
     public void InitData(int index, int level)
     {
@@ -73,8 +76,6 @@ public abstract class Character : MonoBehaviour
             MyAnimator.SetFloat("walkSpeed", 0.5f + stageLevel * aniSpeedAdd);
         }
     }
-
-    protected virtual void StageLevelUp() { }
 
     public void Hit(Character attackChar)
     {

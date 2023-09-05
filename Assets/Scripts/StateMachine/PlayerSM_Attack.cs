@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerSM_Attack : PlayerStateMachine
 {
@@ -17,14 +18,14 @@ public class PlayerSM_Attack : PlayerStateMachine
         float aniProgress = stateInfo.normalizedTime;
         if (aniProgress >= 1f)
         {
-            for (int i = 0; i < monsterPool.Count; i++)
+            if (monsterPool != null && monsterPool.Count != 0)
             {
-                if (playerAttackBox.bounds.Intersects(monsterPool[i].HitBoxCollider.bounds))
+                if (playerAttackBox.bounds.Intersects(monsterPool[0].HitBoxCollider.bounds))
                 {
-                    monsterPool[i].Hit(Player);
+                    monsterPool[0].Hit(Player);
                 }
+                animator.SetInteger("aniIndex", 0);
             }
-            animator.SetInteger("aniIndex", 0);
         }
     }
 

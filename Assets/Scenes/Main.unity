@@ -1544,9 +1544,9 @@ GameObject:
   - component: {fileID: 1811365182}
   - component: {fileID: 1811365181}
   - component: {fileID: 1811365184}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1634,10 +1634,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackBoxCollider: {fileID: 545677945}
-  _jumpSpeed: 0
-  _jumpMaxHeight: 0
-  _gravity: 0
-  _verticalSpeed: 0
 --- !u!1 &1900661465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,6 +3783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87340a8fcac0374bbce6e91eb473550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _aliveMonsterList: []
 --- !u!4 &2273613936114295277
 Transform:
   m_ObjectHideFlags: 0

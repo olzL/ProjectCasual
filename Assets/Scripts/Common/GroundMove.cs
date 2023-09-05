@@ -12,10 +12,17 @@ public class GroundMove : MonoBehaviour
         startPosX = transform.position.x;
         // 카메라 중앙에서 화면 왼쪽 끝까지의 길이
         endPosX = -Camera.main.orthographicSize * ((float)Screen.width / Screen.height);
-
     }
 
     void Update()
+    {
+        if (Character_Player.Instance.IsAlive == true)
+        {
+            Move();
+        }
+    }
+
+    private void Move()
     {
         transform.Translate(-1 * Manager_Stage.Instance.StageSpeed * Time.deltaTime, 0, 0);
 

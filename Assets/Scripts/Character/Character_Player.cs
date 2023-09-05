@@ -21,6 +21,7 @@ public class Character_Player : Character
     }
     public float Gravity { get { return _gravity; } }
     public float JumpMaxHeight { get { return _jumpMaxHeight; } }
+    public bool IsAlive { get { return _isAlive; } }
     public float VerticalSpeed
     {
         get { return _verticalSpeed; }
@@ -28,13 +29,10 @@ public class Character_Player : Character
     }
     public BoxCollider2D AttackBoxCollider;
 
-    [SerializeField]
     private float _jumpSpeed;
-    [SerializeField]
     private float _jumpMaxHeight;
-    [SerializeField]
     private float _gravity;
-    [SerializeField]
+    private bool _isAlive;
     private float _verticalSpeed;
 
     protected override void Awake()
@@ -55,8 +53,22 @@ public class Character_Player : Character
         _jumpSpeed = _globalValueDic[10000005].FloatValue;
         _jumpMaxHeight = _globalValueDic[10000007].FloatValue;
         VerticalSpeed = 0f;
+        _isAlive = true;
 
         StageLevelUp();
+    }
+
+    private void Update()
+    {
+        List<Character_Monster> monsterPool = Manager_Monster.Instance.AliveMonsterList;
+        if (monsterPool != null && monsterPool.Count != 0)
+        {
+            if (HitBoxCollider.bounds.Intersects(monsterPool[0].HitBoxCollider.bounds))
+            {
+                Hit(monsterPool[0]);
+                Manager_Monster.Instance.RemoveMonster(monsterPool[0].name);
+            }
+        }
     }
 
     public void AttackClick()
@@ -76,7 +88,7 @@ public class Character_Player : Character
     protected override void StageLevelUp()
     {
         float gravityBase = _globalValueDic[10000006].FloatValue;
-        float gravityAdd  = _globalValueDic[10000008].FloatValue;
+        float gravityAdd = _globalValueDic[10000008].FloatValue;
         int stageLevel = Manager_Stage.Instance.StageLevel;
 
         _gravity = gravityBase + stageLevel * gravityAdd;
@@ -85,6 +97,7 @@ public class Character_Player : Character
 
     public override void Death()
     {
-        throw new NotImplementedException();
+        _isAlive = false;
+        MyAnimator.SetInteger("aniIndex", 2);
     }
 }

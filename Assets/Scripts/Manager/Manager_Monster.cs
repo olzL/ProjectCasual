@@ -8,6 +8,7 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
 {
     public List<Character_Monster> AliveMonsterList { get { return _aliveMonsterList; } }
 
+    [SerializeField]
     private List<Character_Monster> _aliveMonsterList;
     private List<Character_Monster> _monsterList;
     private int _monsterIndex;
@@ -17,8 +18,6 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
     private bool _isSpawned;
     private float _spawnTime;
     private float _elapsedTime;
-
-    private Dictionary<int, GlobalValueData> _globalValueDic;
 
     private void Awake()
     {
@@ -33,6 +32,24 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
 
         // 임시
         _isSpawned = true;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            CreateMonster();
+        }
+
+        if (Character_Player.Instance.IsAlive == true)
+        {
+            RandomSpawn();
+        }
+
+        if (_aliveMonsterList != null)
+        {
+            PlayerToDistanceSort();
+        }
     }
 
     public void CreateMonster()
@@ -62,7 +79,10 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
     public void RemoveMonster(string name)
     {
         Character_Monster monster = _monsterList.Find(o => o.gameObject.name == name);
-        _aliveMonsterList.Remove(monster);
+        if (monster != null)
+        {
+            _aliveMonsterList.Remove(monster);
+        }
     }
 
     // 임시
@@ -83,13 +103,17 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
         }
     }
 
-    void Update()
+    // 플레이어와 가까운 순으로 정렬
+    private void PlayerToDistanceSort()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            CreateMonster();
-        }
+        Vector3 playerPosition = Character_Player.Instance.transform.position;
 
-        RandomSpawn();
+        _aliveMonsterList.Sort((a, b) =>
+        {
+            float distanceA = Vector3.Distance(a.transform.position, playerPosition);
+            float distanceB = Vector3.Distance(b.transform.position, playerPosition);
+            return distanceA.CompareTo(distanceB);
+        });
+
     }
 }
