@@ -6,6 +6,8 @@ public abstract class Character : MonoBehaviour
     public string Name { get; private set; }
     public int Hp { get; private set; }
     public int Atk { get; private set; }
+    public ECharacterType Type { get; private set; }
+
     /// <summary>
     /// aniIndex(0:Walk, 1:Attack, 2:Death, 3:Jump, 4:Hit)
     /// </summary>
@@ -50,10 +52,11 @@ public abstract class Character : MonoBehaviour
         Name = _characterData.Name.ToString();
         Atk = _characterData.AtkBase + level * _characterData.AtkAdd;
         Hp = _characterData.HpBase + level * _characterData.HpAdd;
+        Type = _characterData.Type;
         // 히트 박스 및 크기
-        Vector2 characterScale = new Vector2(_characterData.ScaleX, _characterData.ScaleY);
-        HitBoxCollider.size = characterScale;
-        transform.localScale = characterScale;
+        Vector2 charScale = new Vector2(_characterData.ScaleX, _characterData.ScaleY);
+        HitBoxCollider.size = charScale;
+        transform.localScale = charScale;
         // 애니메이션
         MyAnimator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Character/AnimatorControllers/" + _characterData.AnimatorName);
         WalkAnimationSpeedUp();

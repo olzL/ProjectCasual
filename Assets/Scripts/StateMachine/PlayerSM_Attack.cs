@@ -20,9 +20,19 @@ public class PlayerSM_Attack : PlayerStateMachine
         {
             if (monsterPool != null && monsterPool.Count != 0)
             {
-                if (playerAttackBox.bounds.Intersects(monsterPool[0].HitBoxCollider.bounds))
+                int monsterIndex = 0;
+                for (int i = 0; i < monsterPool.Count; i++)
                 {
-                    monsterPool[0].Hit(Player);
+                    if (monsterPool[i].Type == ECharacterType.Monster)
+                    {
+                        monsterIndex = i;
+                        break;
+                    }
+                }
+
+                if (playerAttackBox.bounds.Intersects(monsterPool[monsterIndex].HitBoxCollider.bounds))
+                {
+                    monsterPool[monsterIndex].Hit(Player);
                 }
                 animator.SetInteger("aniIndex", 0);
             }

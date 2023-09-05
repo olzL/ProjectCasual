@@ -10,9 +10,12 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
 
     [SerializeField]
     private List<Character_Monster> _aliveMonsterList;
+    private List<Character_Monster> _aliveObstacleList;
     private List<Character_Monster> _monsterList;
     private int _monsterIndex;
     private Vector3 _SpawnPos;
+
+    private Dictionary<int, StageData> _stageDataDic;
 
     // 임시
     private bool _isSpawned;
@@ -23,6 +26,7 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
     {
         _monsterList = new List<Character_Monster>();
         _aliveMonsterList = new List<Character_Monster>();
+        _stageDataDic = Table_210_Stage.Instance.DataDic;
     }
 
     void Start()
@@ -70,9 +74,15 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
         }
 
         // 임시
-        monster.InitData(11010001, Manager_Stage.Instance.StageLevel);
+        int stageLevel = Manager_Stage.Instance.StageLevel;
+        int[] spawnIndex = _stageDataDic[stageLevel].SpawnIndex;
+        int[] spawnRatio = _stageDataDic[stageLevel].SpawnRatio;
+        int charIndex = CustomRandom.Random10000(spawnIndex, spawnRatio);
+
+        monster.InitData(charIndex, stageLevel);
         monster.gameObject.name = monster.Name + "_" + _monsterIndex++;
         monster.transform.position = _SpawnPos;
+
         _aliveMonsterList.Add(monster);
     }
 
@@ -91,7 +101,7 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
         _elapsedTime += Time.deltaTime;
         if (_isSpawned)
         {
-            _spawnTime = Random.Range(0.1f, 1.5f);
+            _spawnTime = Random.Range(0.3f, 1.5f);
             _isSpawned = false;
         }
 

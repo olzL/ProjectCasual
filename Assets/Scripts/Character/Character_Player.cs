@@ -86,7 +86,7 @@ public class Character_Player : Character
     public void MonsterToCollision()
     {
         List<Character_Monster> monsterPool = Manager_Monster.Instance.AliveMonsterList;
-        if (_isHit == false)
+        if (_isHit == false && _isAlive == true)
         {
             if (monsterPool != null && monsterPool.Count != 0)
             {
@@ -95,7 +95,6 @@ public class Character_Player : Character
                     StartCoroutine(DamageImmunity(_DamageImmunityTime));
                     MyAnimator.SetInteger("aniIndex", 4);
                     Hit(monsterPool[0]);
-                    Manager_Monster.Instance.RemoveMonster(monsterPool[0].name);
                 }
             }
         }
@@ -104,10 +103,8 @@ public class Character_Player : Character
     private IEnumerator DamageImmunity(float time)
     {
         _isHit = true;
-        Debug.Log("피해면역 시작");
         yield return new WaitForSeconds(time);
         _isHit = false;
-        Debug.Log("피해면역 종료");
     }
 
     protected override void StageLevelUp()

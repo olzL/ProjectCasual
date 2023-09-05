@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2f1e5d74fab01a4885b05c0b5d5f46e
+guid: 45385654aa3bbfe45be6e37a31e92a7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,169 +129,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goblin_Walk_0
+      name: Obstacle_Fire_Idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb93045da037cc847a187a2132f1ae70
-      internalID: 1763655929
+      spriteID: fdb3132cc3aea6a4fa871318af26fe83
+      internalID: 2113905766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_1
+      name: Obstacle_Fire_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c559228afa6ee954db943aa53e071132
+      internalID: 2086009009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_Fire_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd56a0453554ba4c854ff407c907b19
+      internalID: 1845737183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_Fire_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f12d4f228aa104fad9937a7308ede5
+      internalID: -813797307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacle_Fire_Idle_4
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c4dc48e9c5d210419b752852d77eec3
-      internalID: 1707232183
+      spriteID: 88cde36162c27a941b854b3d24bbbf94
+      internalID: -2032530727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_2
+      name: Obstacle_Fire_Idle_5
       rect:
         serializedVersion: 2
-        x: 192
+        x: 120
         y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2670daf8245cd454c88ba97fd1d0d6e7
-      internalID: 2068927961
+      spriteID: 68fecca736d24d74fb40b6831cd529bc
+      internalID: 1817493951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_3
+      name: Obstacle_Fire_Idle_6
       rect:
         serializedVersion: 2
-        x: 288
+        x: 144
         y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47d5640a3ecadb34e8f2bd391a24cf6b
-      internalID: 1621517936
+      spriteID: 27b6dc70f670c214dae2d0be9817b7ff
+      internalID: -756495531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_4
+      name: Obstacle_Fire_Idle_7
       rect:
         serializedVersion: 2
-        x: 384
+        x: 168
         y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e06068c7801ad0241903016b401e3eca
-      internalID: 1052320847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin_Walk_5
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c6e17d7b2ca1a44a96e6e34ada7e4e4
-      internalID: 1543642667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin_Walk_6
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 475a3606facf0584c8c9287793ffdb03
-      internalID: 265630046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin_Walk_7
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 0
-        width: 96
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d59e55d2ba594f6459964e962b69650c
-      internalID: -1206887231
+      spriteID: d53cbe35a76adb041af34792d128d9d1
+      internalID: -635410029
       vertices: []
       indices: 
       edges: []
@@ -307,14 +307,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goblin_Walk_7: -1206887231
-      Goblin_Walk_5: 1543642667
-      Goblin_Walk_2: 2068927961
-      Goblin_Walk_3: 1621517936
-      Goblin_Walk_4: 1052320847
-      Goblin_Walk_1: 1707232183
-      Goblin_Walk_0: 1763655929
-      Goblin_Walk_6: 265630046
+      Obstacle_Fire_Idle_0: 2113905766
+      Obstacle_Fire_Idle_5: 1817493951
+      Obstacle_Fire_Idle_7: -635410029
+      Obstacle_Fire_Idle_4: -2032530727
+      Obstacle_Fire_Idle_6: -756495531
+      Obstacle_Fire_Idle_3: -813797307
+      Obstacle_Fire_Idle_1: 2086009009
+      Obstacle_Fire_Idle_2: 1845737183
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

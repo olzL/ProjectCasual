@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,15 @@ public struct CharacterData
     public float ScaleX;
     public float ScaleY;
     public string AnimatorName;
+    public ECharacterType Type;
+}
+
+public enum ECharacterType
+{
+    None,
+    Character,
+    Monster,
+    Obstacle
 }
 
 public class Table_110_Character : TableParser<Table_110_Character, CharacterData>
@@ -38,6 +48,7 @@ public class Table_110_Character : TableParser<Table_110_Character, CharacterDat
             Data.ScaleX = float.Parse(lineData[7]);
             Data.ScaleY = float.Parse(lineData[8]);
             Data.AnimatorName = lineData[9];
+            Data.Type = (ECharacterType)Enum.Parse(typeof(ECharacterType), lineData[10]);
             dataList.Add(Data);
             dataDic.Add(Data.Index, Data);
         }
