@@ -22,6 +22,7 @@ public class Character_Player : Character
     public float Gravity { get { return _gravity; } }
     public float JumpMaxHeight { get { return _jumpMaxHeight; } }
     public bool IsAlive { get { return _isAlive; } }
+    public bool IsHit { get { return _isHit; } }
     public float VerticalSpeed
     {
         get { return _verticalSpeed; }
@@ -34,6 +35,8 @@ public class Character_Player : Character
     private float _gravity;
     private bool _isAlive;
     private float _verticalSpeed;
+    private bool _isHit;
+    private float _DamageImmunityTime;
 
     protected override void Awake()
     {
@@ -52,37 +55,59 @@ public class Character_Player : Character
 
         _jumpSpeed = _globalValueDic[10000005].FloatValue;
         _jumpMaxHeight = _globalValueDic[10000007].FloatValue;
+        _jumpMaxHeight = _globalValueDic[10000007].FloatValue;
+        _DamageImmunityTime = _globalValueDic[10000010].FloatValue;
         VerticalSpeed = 0f;
         _isAlive = true;
+        _isHit = false;
 
         StageLevelUp();
     }
 
     private void Update()
     {
-        List<Character_Monster> monsterPool = Manager_Monster.Instance.AliveMonsterList;
-        if (monsterPool != null && monsterPool.Count != 0)
-        {
-            if (HitBoxCollider.bounds.Intersects(monsterPool[0].HitBoxCollider.bounds))
-            {
-                Hit(monsterPool[0]);
-                Manager_Monster.Instance.RemoveMonster(monsterPool[0].name);
-            }
-        }
+        MonsterToCollision();
     }
 
-    public void AttackClick()
+    public void Attack()
     {
         MyAnimator.SetInteger("aniIndex", 1);
     }
 
-    public void JumpClick()
+    public void Jump()
     {
         if (VerticalSpeed == 0f)
         {
             VerticalSpeed = _jumpSpeed;
             MyAnimator.SetInteger("aniIndex", 3);
         }
+    }
+
+    public void MonsterToCollision()
+    {
+        List<Character_Monster> monsterPool = Manager_Monster.Instance.AliveMonsterList;
+        if (_isHit == false)
+        {
+            if (monsterPool != null && monsterPool.Count != 0)
+            {
+                if (HitBoxCollider.bounds.Intersects(monsterPool[0].HitBoxCollider.bounds))
+                {
+                    StartCoroutine(DamageImmunity(_DamageImmunityTime));
+                    MyAnimator.SetInteger("aniIndex", 4);
+                    Hit(monsterPool[0]);
+                    Manager_Monster.Instance.RemoveMonster(monsterPool[0].name);
+                }
+            }
+        }
+    }
+
+    private IEnumerator DamageImmunity(float time)
+    {
+        _isHit = true;
+        Debug.Log("피해면역 시작");
+        yield return new WaitForSeconds(time);
+        _isHit = false;
+        Debug.Log("피해면역 종료");
     }
 
     protected override void StageLevelUp()

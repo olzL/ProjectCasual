@@ -43,6 +43,7 @@ public class PlayerSM_Jump : PlayerStateMachine
 
     override public void StateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        Player.transform.position = _defaultPos;
+        Player.VerticalSpeed = 0f;
     }
 }
