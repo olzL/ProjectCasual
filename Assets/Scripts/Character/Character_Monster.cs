@@ -23,7 +23,7 @@ public class Character_Monster : Character
 
     private void Update()
     {
-        if (_isAlive == true && Character_Player.Instance.IsAlive == true)
+        if (_isAlive == true)
         {
             Move();
         }

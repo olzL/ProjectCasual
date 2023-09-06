@@ -10,7 +10,6 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
 
     [SerializeField]
     private List<Character_Monster> _aliveMonsterList;
-    private List<Character_Monster> _aliveObstacleList;
     private List<Character_Monster> _monsterList;
     private int _monsterIndex;
     private Vector3 _SpawnPos;

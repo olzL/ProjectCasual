@@ -28,15 +28,12 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
 
     void Update()
     {
-        if (Character_Player.Instance.IsAlive == true)
-        {
-            _elapsedTime += Time.deltaTime;
+        _elapsedTime += Time.deltaTime;
 
-            if (_elapsedTime >= _levelUpInterval)
-            {
-                LevelUp();
-                _elapsedTime = 0f;
-            }
+        if (_elapsedTime >= _levelUpInterval)
+        {
+            LevelUp();
+            _elapsedTime = 0f;
         }
     }
 
@@ -45,6 +42,7 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
         _stageLevel = level;
         _stageSpeed = _stageDataDic[StageLevel].Speed;
         _levelUpInterval = _stageDataDic[StageLevel].FinishTime;
+        Manager_Background.Instance.ChangeBackground(_stageDataDic[level].Background);
     }
 
     private void LevelUp()
@@ -56,5 +54,10 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
     public void EndStage()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
     }
 }
