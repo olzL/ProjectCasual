@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Death
-  m_Speed: 6
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5029659299712427134}
@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 61a79527b62a6494b9b35c0071ab8a91, type: 2}
+  m_Motion: {fileID: 7400000, guid: d511c7c60c0bb6147b3bbf0347db9057, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -96,7 +96,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Monster_Goblin
+  m_Name: Monster_DinoGreen
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: aniIndex
@@ -170,7 +170,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 58348679cd9f35443b016c46653815cf, type: 2}
+  m_Motion: {fileID: 7400000, guid: 71b796911fc06b44bb216113dd2a3f58, type: 2}
   m_Tag: 
   m_SpeedParameter: walkSpeed
   m_MirrorParameter: 

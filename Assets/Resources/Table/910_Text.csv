@@ -6,5 +6,9 @@ int,string,string
 91000004,점프,Jump
 91000005,게임 시작,Game Start
 91010001,플레이어,Player
-91010002,고블린,Goblin
-91010003,불,Fire
+91011001,파란꽁룡,BlueDino
+91011002,빨간꽁룡,RedDino
+91011003,초록꽁룡,GreenDino
+91011004,노란꽁룡,YellowDino
+91012001,주황불,OrangeFire
+91012002,파란불,BlueFire
