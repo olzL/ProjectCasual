@@ -39,6 +39,7 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
     private void Start()
     {
         StageInit(1);
+        Play();
     }
 
     void Update()
@@ -82,6 +83,11 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
     public void Pause()
     {
         Time.timeScale = 0;
+    }
+
+    public void Play()
+    {
+        Time.timeScale = 1;
     }
 
     private void AddTimeScore()
