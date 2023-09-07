@@ -11,6 +11,7 @@ public class UI_Stage : UI_Base
     [SerializeField] TextMeshProUGUI _exitButtonText;
     [SerializeField] TextMeshProUGUI _stageLevelText;
     [SerializeField] TextMeshProUGUI _rameRateText;
+    [SerializeField] TextMeshProUGUI _scoreText;
     #endregion
 
     // fps 테스트용
@@ -19,7 +20,7 @@ public class UI_Stage : UI_Base
     protected override void Start()
     {
         base.Start();
-        Manager_Stage.Instance.LevelInit += TextInit;
+        Manager_Stage.Instance.LevelUpAction += TextInit;
     }
 
     protected override void TextInit()
@@ -46,5 +47,7 @@ public class UI_Stage : UI_Base
             FrameRateDisplay();
             elapsedTime = 0.0f;
         }
+
+        _scoreText.text = Manager_Stage.Instance.Score.ToString();
     }
 }

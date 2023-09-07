@@ -36,7 +36,7 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Start()
     {
-        Manager_Stage.Instance.LevelInit += StageLevelUp;
+        Manager_Stage.Instance.LevelUpAction += StageLevelUp;
     }
 
     protected virtual void StageLevelUp() { }
@@ -81,6 +81,12 @@ public abstract class Character : MonoBehaviour
 
         if (Hp <= 0)
         {
+            // ų
+            if (attackChar == Character_Player.Instance)
+            {
+                Manager_Stage.Instance.AddKillScore();
+                Debug.Log("ų!");
+            }
             Death();
         }
     }

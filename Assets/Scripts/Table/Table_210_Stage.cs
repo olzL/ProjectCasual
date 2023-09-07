@@ -12,6 +12,8 @@ public struct StageData
     public int[] SpawnRatio;
     public float Speed;
     public string Background;
+    public int TimeScore;
+    public int KillScore;
 }
 
 public class Table_210_Stage : TableParser<Table_210_Stage, StageData>
@@ -37,6 +39,8 @@ public class Table_210_Stage : TableParser<Table_210_Stage, StageData>
             Data.SpawnRatio[1] = int.Parse(lineData[5]);
             Data.Speed = float.Parse(lineData[6]);
             Data.Background = lineData[7];
+            Data.TimeScore = int.Parse(lineData[8]);
+            Data.KillScore = int.Parse(lineData[9]);
             dataList.Add(Data);
             dataDic.Add(Data.Level, Data);
         }
