@@ -7,23 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class Manager_Stage : MonoSingleton<Manager_Stage>
 {
-    public float StageSpeed { get { return _stageSpeed; } }   // 맵 및 몬스터 이동 속도
-    public int StageLevel { get { return _stageLevel; } }     // 스테이지 레벨
-    public double Score { get { return _score; } }     // 스테이지 레벨
-    public Action LevelUpAction;                        // 레벨업 시 실행될 함수들
+    public float StageSpeed { get { return _stageSpeed; } } // 맵 및 몬스터 이동 속도
+    public int StageLevel { get { return _stageLevel; } }   // 스테이지 레벨
+    public double Score { get { return _score; } }          // 스테이지 레벨
+    public int KillAmount { get { return _killAmount; } }  // 몬스터 킬 횟수
+    public int AliveTime { get { return _aliveTime; } }  // 생존 시간
+    public Action LevelUpAction;                            // 레벨업 시 실행될 함수들
 
     private float _stageSpeed;
     private int _stageLevel;
     private double _score;
 
+    private int _killAmount;
+    private int _aliveTime;
+    private float _elapsedTime;
+
     private int _addTimeScore;
     private int _addKillScore;
 
     private float _levelUpInterval;     // 레벨업 간격
-    private float _levelUpElapsedTime;  // 레벨업 지난 시간
-
     private float _timeScoreInterval;    // 시간점수 간격
-    private float _timeScoreElapsedTime; // 시간점수 지난 시간
 
     private Dictionary<int, StageData> _stageDataDic;
     private Dictionary<int, GlobalValueData> _globalDataDic;
@@ -40,23 +43,32 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
     {
         StageInit(1);
         Play();
+        _killAmount = 0;
+        _aliveTime = 0;
+        Character_Player.Instance.DeathAction += Pause;
+
+        StartCoroutine(Timer(LevelUp, _levelUpInterval));
+        StartCoroutine(Timer(AddTimeScore, _timeScoreInterval));
     }
 
     void Update()
     {
-        _levelUpElapsedTime += Time.deltaTime;
-        if (_levelUpElapsedTime >= _levelUpInterval)
+        _elapsedTime += Time.deltaTime;
+        if (_elapsedTime >= 1)
         {
-            LevelUp();
-            _levelUpElapsedTime = 0f;
+            _aliveTime++;
+            _elapsedTime = 0f;
+        }
+    }
+
+    IEnumerator Timer(Action action, float intervalTime)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(intervalTime);
+            action();
         }
 
-        _timeScoreElapsedTime += Time.deltaTime;
-        if (_timeScoreElapsedTime >= _timeScoreInterval)
-        {
-            AddTimeScore();
-            _timeScoreElapsedTime = 0f;
-        }
     }
 
     private void StageInit(int level)
@@ -97,6 +109,7 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
 
     public void AddKillScore()
     {
+        _killAmount++;
         _score += _addKillScore;
     }
 }

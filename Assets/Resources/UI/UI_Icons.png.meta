@@ -864,13 +864,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UiIconsPack_Transparent_Icons_40
+      name: Ad
       rect:
         serializedVersion: 2
         x: 1482
         y: 1223
-        width: 233
-        height: 260
+        width: 235
+        height: 228
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1898,6 +1898,7 @@ TextureImporter:
       UiIconsPack_Transparent_Icons_13: 731821111
       UiIconsPack_Transparent_Icons_39: -1879796415
       UiIconsPack_Transparent_Icons_6: 934624150
+      Ad: 1168114925
       UiIconsPack_Transparent_Icons_35: -2077216554
       UiIconsPack_Transparent_Icons_61: -325420108
       UiIconsPack_Transparent_Icons_17: -214627250
@@ -1911,7 +1912,6 @@ TextureImporter:
       UiIconsPack_Transparent_Icons_78: 1007218476
       UiIconsPack_Transparent_Icons_69: 1998319146
       UiIconsPack_Transparent_Icons_10: 288820198
-      UiIconsPack_Transparent_Icons_40: 1168114925
       UiIconsPack_Transparent_Icons_36: 1864586923
       UiIconsPack_Transparent_Icons_32: 121238434
   spritePackingTag: 

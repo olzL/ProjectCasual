@@ -8,15 +8,12 @@ public abstract class Character : MonoBehaviour
     public int Atk { get; private set; }
     public ECharacterType Type { get; private set; }
 
-    /// <summary>
-    /// aniIndex(0:Walk, 1:Attack, 2:Death, 3:Jump, 4:Hit)
-    /// </summary>
-    public Animator MyAnimator { get; private set; }
     public BoxCollider2D HitBoxCollider { get; private set; }
 
     protected Dictionary<int, GlobalValueData> _globalValueDic;
 
     private CharacterData _characterData;
+    private Animator _animator;
 
     protected virtual void Awake()
     {
@@ -27,9 +24,9 @@ public abstract class Character : MonoBehaviour
             HitBoxCollider = gameObject.AddComponent<BoxCollider2D>();
         }
 
-        if (MyAnimator == null)
+        if (_animator == null)
         {
-            MyAnimator = gameObject.AddComponent<Animator>();
+            _animator = gameObject.AddComponent<Animator>();
         }
         _globalValueDic = Table_101_GlobalValue.Instance.DataDic;
     }
@@ -42,8 +39,6 @@ public abstract class Character : MonoBehaviour
     protected virtual void StageLevelUp() { }
 
     public abstract void Death();
-
-
 
     public void InitData(int index, int level)
     {
@@ -58,7 +53,7 @@ public abstract class Character : MonoBehaviour
         HitBoxCollider.size = charScale;
         transform.localScale = charScale;
         // 애니메이션
-        MyAnimator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Character/AnimatorControllers/" + _characterData.AnimatorName);
+        _animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Character/AnimatorControllers/" + _characterData.AnimatorName);
         WalkAnimationSpeedUp();
     }
 
@@ -68,10 +63,18 @@ public abstract class Character : MonoBehaviour
         float maxAniSpeed = _globalValueDic[10000003].FloatValue;
         int stageLevel = Manager_Stage.Instance.StageLevel;
 
-        if(MyAnimator.speed <= maxAniSpeed)
+        if(_animator.speed <= maxAniSpeed)
         {
-            MyAnimator.SetFloat("walkSpeed", 0.5f + stageLevel * aniSpeedAdd);
+            _animator.SetFloat("walkSpeed", 0.5f + stageLevel * aniSpeedAdd);
         }
+    }
+
+    /// <summary>
+    /// aniIndex(0:Walk, 1:Attack, 2:Death, 3:Jump, 4:Hit)
+    /// </summary>
+    public void PlayAnimation(int aniIndex)
+    {
+        _animator.SetInteger("aniIndex", aniIndex);
     }
 
     public void Hit(Character attackChar)
@@ -81,7 +84,7 @@ public abstract class Character : MonoBehaviour
 
         if (Hp <= 0)
         {
-            // 킬
+            // Kill
             if (attackChar == Character_Player.Instance)
             {
                 Manager_Stage.Instance.AddKillScore();

@@ -35,8 +35,6 @@ public class PlayerSM_Jump : PlayerStateMachine
 
         if (Player.transform.position.y < 0f)
         {
-            Player.transform.position = _defaultPos;
-            Player.VerticalSpeed = 0f;
             animator.SetInteger("aniIndex", 0);
         }
     }

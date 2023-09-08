@@ -8,6 +8,6 @@ public class Button_Attack : UI_Button
 {
     public override void OnPointerDown(PointerEventData eventData)
     {
-        Character_Player.Instance.Attack();
+        Character_Player.Instance.PlayAnimation(1);
     }
 }

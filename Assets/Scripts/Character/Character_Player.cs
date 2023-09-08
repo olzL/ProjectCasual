@@ -29,6 +29,7 @@ public class Character_Player : Character
         set { _verticalSpeed = value; }
     }
     public BoxCollider2D AttackBoxCollider;
+    public Action DeathAction;
 
     private float _jumpSpeed;
     private float _jumpMaxHeight;
@@ -71,15 +72,23 @@ public class Character_Player : Character
 
     public void Attack()
     {
-        MyAnimator.SetInteger("aniIndex", 1);
-    }
-
-    public void Jump()
-    {
-        if (VerticalSpeed == 0f)
+        List<Character_Monster> monsterPool = Manager_Monster.Instance.AliveMonsterList;
+        if (monsterPool != null && monsterPool.Count != 0)
         {
-            VerticalSpeed = _jumpSpeed;
-            MyAnimator.SetInteger("aniIndex", 3);
+            int monsterIndex = 0;
+            for (int i = 0; i < monsterPool.Count; i++)
+            {
+                if (monsterPool[i].Type == ECharacterType.Monster)
+                {
+                    monsterIndex = i;
+                    break;
+                }
+            }
+
+            if (AttackBoxCollider.bounds.Intersects(monsterPool[monsterIndex].HitBoxCollider.bounds))
+            {
+                monsterPool[monsterIndex].Hit(this);
+            }
         }
     }
 
@@ -93,10 +102,19 @@ public class Character_Player : Character
                 if (HitBoxCollider.bounds.Intersects(monsterPool[0].HitBoxCollider.bounds))
                 {
                     StartCoroutine(DamageImmunity(_DamageImmunityTime));
-                    MyAnimator.SetInteger("aniIndex", 4);
+                    PlayAnimation(4);
                     Hit(monsterPool[0]);
                 }
             }
+        }
+    }
+
+    public void Jump()
+    {
+        if (VerticalSpeed == 0f)
+        {
+            VerticalSpeed = _jumpSpeed;
+            PlayAnimation(3);
         }
     }
 
@@ -119,7 +137,8 @@ public class Character_Player : Character
 
     public override void Death()
     {
+        PlayAnimation(2);
+        DeathAction();
         _isAlive = false;
-        MyAnimator.SetInteger("aniIndex", 2);
     }
 }

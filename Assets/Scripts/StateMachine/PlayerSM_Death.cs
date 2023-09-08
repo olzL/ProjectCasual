@@ -11,11 +11,11 @@ public class PlayerSM_Death : PlayerStateMachine
 
     override public void StateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        float aniProgress = stateInfo.normalizedTime;
-        if (aniProgress >= 1f)
-        {
-            Manager_Stage.Instance.Pause();
-        }
+        //float aniProgress = stateInfo.normalizedTime * Time.unscaledDeltaTime;
+        //if (aniProgress >= 1f)
+        //{
+        //    Manager_Stage.Instance.Pause();
+        //}
     }
 
     override public void StateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

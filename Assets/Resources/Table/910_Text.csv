@@ -6,6 +6,11 @@ int,string,string
 91000004,점프,Jump
 91000005,게임 시작,Game Start
 91000006,일시정지,Pause
+91000007,게임 종료,Game Over
+91000008,생존 시간: {0} 분 {1} 초,Alive Time: {0} min {1} sec
+91000009,처치 몬스터: {0},Kill Monster: {0}
+91000010,총 점수: {0},Total Score: {0}
+91000011,광고보고 이어하기,Continuing after ad
 91010001,플레이어,Player
 91011001,파란꽁룡,BlueDino
 91011002,빨간꽁룡,RedDino
