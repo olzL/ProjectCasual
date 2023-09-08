@@ -37,8 +37,8 @@ public class Character_Monster : Character
     public override void Death()
     {
         _isAlive = false;
-        PlayAnimation(2);
         Manager_Monster.Instance.RemoveMonster(gameObject.name);
+        gameObject.SetActive(false);
     }
 
     public void Respawn()

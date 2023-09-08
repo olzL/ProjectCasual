@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Stage : UI_Base
 {
@@ -26,6 +27,7 @@ public class UI_Stage : UI_Base
 
     [SerializeField] GameObject _pausePanelObj;
     [SerializeField] GameObject _gameOverPanelObj;
+    [SerializeField] Image Hpbar;
 
     private Manager_Stage _stageManager;
 
@@ -46,6 +48,7 @@ public class UI_Stage : UI_Base
 
     private void Update()
     {
+        Hpbar.fillAmount = (float)Character_Player.Instance.CurHp / Character_Player.Instance.MaxHp;
         elapsedTime += Time.deltaTime;
         if (elapsedTime > 0.3f)
         {

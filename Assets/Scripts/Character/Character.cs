@@ -4,7 +4,8 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     public string Name { get; private set; }
-    public int Hp { get; private set; }
+    public int MaxHp { get; private set; }
+    public int CurHp { get; private set; }
     public int Atk { get; private set; }
     public ECharacterType Type { get; private set; }
 
@@ -46,7 +47,8 @@ public abstract class Character : MonoBehaviour
         // 기본 정보
         Name = _characterData.Name.ToString();
         Atk = _characterData.AtkBase + level * _characterData.AtkAdd;
-        Hp = _characterData.HpBase + level * _characterData.HpAdd;
+        MaxHp = _characterData.HpBase + level * _characterData.HpAdd;
+        CurHp = _characterData.HpBase + level * _characterData.HpAdd;
         Type = _characterData.Type;
         // 히트 박스 및 크기
         Vector2 charScale = new Vector2(_characterData.ScaleX, _characterData.ScaleY);
@@ -79,10 +81,10 @@ public abstract class Character : MonoBehaviour
 
     public void Hit(Character attackChar)
     {
-        Hp -= attackChar.Atk;
-        Debug.Log(gameObject.name + "의 HP = " + Hp);
+        CurHp -= attackChar.Atk;
+        Debug.Log(gameObject.name + "의 HP = " + CurHp);
 
-        if (Hp <= 0)
+        if (CurHp <= 0)
         {
             // Kill
             if (attackChar == Character_Player.Instance)
@@ -90,7 +92,7 @@ public abstract class Character : MonoBehaviour
                 Manager_Stage.Instance.AddKillScore();
                 Debug.Log("킬!");
             }
-            Death();
+            PlayAnimation(2);
         }
     }
 }

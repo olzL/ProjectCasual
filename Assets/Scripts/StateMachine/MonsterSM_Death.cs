@@ -14,7 +14,11 @@ public class MonsterSM_Death : StateMachineBehaviour
         float aniProgress = stateInfo.normalizedTime;
         if (aniProgress >= 1f)
         {
-            animator.gameObject.SetActive(false);
+            Character_Monster mon = Manager_Monster.Instance.AliveMonsterList.Find(o => animator.name == o.name);
+            if (mon != null)
+            {
+                mon.Death();
+            }
             animator.SetInteger("aniIndex", 0);
         }
     }

@@ -2177,6 +2177,7 @@ MonoBehaviour:
   _adDescText: {fileID: 72473749}
   _pausePanelObj: {fileID: 1195003724}
   _gameOverPanelObj: {fileID: 1711974377}
+  Hpbar: {fileID: 835847271}
 --- !u!1 &815740577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4716,7 +4717,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847606367}
-  - component: {fileID: 1847606368}
   m_Layer: 5
   m_Name: Bar_HP
   m_TagString: Untagged
@@ -4746,19 +4746,6 @@ RectTransform:
   m_AnchoredPosition: {x: -688, y: -84}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1847606368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847606366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f42febde1e72b40ba79d4c15c611dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hpbar: {fileID: 835847271}
 --- !u!1 &1900661465
 GameObject:
   m_ObjectHideFlags: 0
