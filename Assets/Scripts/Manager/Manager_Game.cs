@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Manager_Game : MonoSingleton<Manager_Game>
 {
+    public int GameMode { get { return _gameMode; } }
+    private int _gameMode;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -33,8 +36,15 @@ public class Manager_Game : MonoSingleton<Manager_Game>
         Table_210_Stage.Instance.LoadData("210_Stage");
     }
 
-    public void StartStage()
+    public void StartInfiniteStage()
     {
+        _gameMode = 1;
+        SceneManager.LoadScene(1);
+    }
+
+    public void StartChallengeStage()
+    {
+        _gameMode = 2;
         SceneManager.LoadScene(1);
     }
 }

@@ -72,7 +72,7 @@ public abstract class Character : MonoBehaviour
     }
 
     /// <summary>
-    /// aniIndex(0:Walk, 1:Attack, 2:Death, 3:Jump, 4:Hit)
+    /// aniIndex(0:Walk, 1:Attack, 2:Death, 3:Jump, 4:Hit, 5:Resurrection)
     /// </summary>
     public void PlayAnimation(int aniIndex)
     {
@@ -94,5 +94,21 @@ public abstract class Character : MonoBehaviour
             }
             PlayAnimation(2);
         }
+    }
+
+    protected void SetHp(int hp)
+    {
+        CurHp = hp;
+    }
+
+    protected void SetHitBox(Vector2 size)
+    {
+        HitBoxCollider.size = size;
+    }
+
+    protected void SetHitBox(Vector2 size, Vector2 offset)
+    {
+        HitBoxCollider.size = size;
+        HitBoxCollider.offset = offset;
     }
 }

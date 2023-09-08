@@ -30,7 +30,7 @@ public class Character_Monster : Character
 
         if (transform.position.x <= _endPosX)
         {
-            Death();
+            PlayAnimation(2);
         }
     }
 
@@ -38,7 +38,6 @@ public class Character_Monster : Character
     {
         _isAlive = false;
         Manager_Monster.Instance.RemoveMonster(gameObject.name);
-        gameObject.SetActive(false);
     }
 
     public void Respawn()

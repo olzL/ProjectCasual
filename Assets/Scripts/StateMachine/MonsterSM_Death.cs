@@ -6,7 +6,11 @@ public class MonsterSM_Death : StateMachineBehaviour
 {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        Character_Monster mon = Manager_Monster.Instance.AliveMonsterList.Find(o => animator.name == o.name);
+        if (mon != null)
+        {
+            mon.Death();
+        }
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -14,11 +18,7 @@ public class MonsterSM_Death : StateMachineBehaviour
         float aniProgress = stateInfo.normalizedTime;
         if (aniProgress >= 1f)
         {
-            Character_Monster mon = Manager_Monster.Instance.AliveMonsterList.Find(o => animator.name == o.name);
-            if (mon != null)
-            {
-                mon.Death();
-            }
+            animator.gameObject.SetActive(false);
             animator.SetInteger("aniIndex", 0);
         }
     }

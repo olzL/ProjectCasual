@@ -19,8 +19,9 @@ public class Character_Player : Character
             return _instance;
         }
     }
-    public float Gravity { get { return _gravity; } }
+    public float JumpSpeed { get { return _jumpSpeed; } }
     public float JumpMaxHeight { get { return _jumpMaxHeight; } }
+    public float Gravity { get { return _gravity; } }
     public bool IsAlive { get { return _isAlive; } }
     public bool IsHit { get { return _isHit; } }
     public float VerticalSpeed
@@ -35,9 +36,11 @@ public class Character_Player : Character
     private float _jumpMaxHeight;
     private float _gravity;
     private bool _isAlive;
-    private float _verticalSpeed;
     private bool _isHit;
-    private float _DamageImmunityTime;
+    private float _verticalSpeed;
+
+    private float _hitImmunityTime;
+    private float _ResurImmunityTime;
 
     protected override void Awake()
     {
@@ -57,11 +60,13 @@ public class Character_Player : Character
         _jumpSpeed = _globalValueDic[10000005].FloatValue;
         _jumpMaxHeight = _globalValueDic[10000007].FloatValue;
         _jumpMaxHeight = _globalValueDic[10000007].FloatValue;
-        _DamageImmunityTime = _globalValueDic[10000010].FloatValue;
+        _hitImmunityTime = _globalValueDic[10000010].FloatValue;
+        _ResurImmunityTime = _globalValueDic[10000011].FloatValue;
         VerticalSpeed = 0f;
         _isAlive = true;
         _isHit = false;
 
+        SetHitBox(new Vector2(0.5f, 1f),new Vector2(-0.3f, 0f));
         StageLevelUp();
     }
 
@@ -101,7 +106,7 @@ public class Character_Player : Character
             {
                 if (HitBoxCollider.bounds.Intersects(monsterPool[0].HitBoxCollider.bounds))
                 {
-                    StartCoroutine(DamageImmunity(_DamageImmunityTime));
+                    StartCoroutine(DamageImmunity(_hitImmunityTime));
                     PlayAnimation(4);
                     Hit(monsterPool[0]);
                 }
@@ -113,7 +118,6 @@ public class Character_Player : Character
     {
         if (VerticalSpeed == 0f)
         {
-            VerticalSpeed = _jumpSpeed;
             PlayAnimation(3);
         }
     }
@@ -137,8 +141,16 @@ public class Character_Player : Character
 
     public override void Death()
     {
-        PlayAnimation(2);
-        DeathAction();
+        Manager_Stage.Instance.Pause();
         _isAlive = false;
+        DeathAction();
+    }
+
+    public void Resurrection()
+    {
+        Manager_Stage.Instance.Play();
+        StartCoroutine(DamageImmunity(_ResurImmunityTime));
+        SetHp(MaxHp);
+        _isAlive = true;
     }
 }

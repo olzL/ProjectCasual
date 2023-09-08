@@ -11,6 +11,7 @@ public class PlayerSM_Jump : PlayerStateMachine
 
     override public void StateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Player.VerticalSpeed = Player.JumpSpeed;
         _isJumpMax = false;
         _jumpPos = Vector3.zero;
         _defaultPos = Player.transform.position;

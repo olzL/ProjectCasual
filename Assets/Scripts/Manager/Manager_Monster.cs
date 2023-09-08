@@ -15,26 +15,32 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
     private Vector3 _SpawnPos;
 
     private Dictionary<int, StageData> _stageDataDic;
+    private Dictionary<int, GlobalValueData> _globalDataDic;
 
     // 임시
     private bool _isSpawned;
     private float _spawnTime;
+    private float _spawnIntervalMin;
+    private float _spawnIntervalMax;
     private float _elapsedTime;
 
     private void Awake()
     {
-        _monsterList = new List<Character_Monster>();
-        _aliveMonsterList = new List<Character_Monster>();
-        _stageDataDic = Table_210_Stage.Instance.DataDic;
+        
     }
 
     void Start()
     {
+        _monsterList = new List<Character_Monster>();
+        _aliveMonsterList = new List<Character_Monster>();
+        _stageDataDic = Table_210_Stage.Instance.DataDic;
+        _globalDataDic = Table_101_GlobalValue.Instance.DataDic;
+
         _monsterIndex = 0;
         _SpawnPos = new Vector3(20f, 0f, 0f);
-
-        // 임시
         _isSpawned = true;
+        _spawnIntervalMin = _globalDataDic[10000013].FloatValue;
+        _spawnIntervalMax = _globalDataDic[10000014].FloatValue;
     }
 
     void Update()
@@ -72,7 +78,6 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
             monster.Respawn();
         }
 
-        // 임시
         int stageLevel = Manager_Stage.Instance.StageLevel;
         int[] spawnIndex = _stageDataDic[stageLevel].SpawnIndex;
         int[] spawnRatio = _stageDataDic[stageLevel].SpawnRatio;
@@ -94,13 +99,12 @@ public class Manager_Monster : MonoSingleton<Manager_Monster>
         }
     }
 
-    // 임시
     private void RandomSpawn()
     {
         _elapsedTime += Time.deltaTime;
         if (_isSpawned)
         {
-            _spawnTime = Random.Range(0.3f, 1.5f);
+            _spawnTime = Random.Range(_spawnIntervalMin, _spawnIntervalMax);
             _isSpawned = false;
         }
 

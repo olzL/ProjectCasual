@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,20 +28,14 @@ public class UI_Stage : UI_Base
     [SerializeField] GameObject _gameOverPanelObj;
     [SerializeField] Image Hpbar;
 
-    private Manager_Stage _stageManager;
-
     // fps 테스트용
     float elapsedTime;
-
-    private void Awake()
-    {
-        _stageManager = Manager_Stage.Instance;
-    }
 
     protected override void Start()
     {
         base.Start();
-        _stageManager.LevelUpAction += TextInit;
+
+        Manager_Stage.Instance.LevelUpAction += TextInit;
         Character_Player.Instance.DeathAction += ShowGameOverPanel;
     }
 
@@ -60,7 +53,7 @@ public class UI_Stage : UI_Base
 
     protected override void TextInit()
     {
-        _stageLevelText.text = string.Format(TextLoader.Instance.GetText(91000001), _stageManager.StageLevel);
+        _stageLevelText.text = string.Format(TextLoader.Instance.GetText(91000001), Manager_Stage.Instance.StageLevel);
         _attackButtonText.text = TextLoader.Instance.GetText(91000002);
         _jumpButtonText.text = TextLoader.Instance.GetText(91000004);
         _pauseTitleName.text = TextLoader.Instance.GetText(91000006);
@@ -68,12 +61,12 @@ public class UI_Stage : UI_Base
 
     private void ShowGameOverPanel()
     {
-        int aliveTimeMin = _stageManager.AliveTime / 60;
-        int aliveTimeSec = _stageManager.AliveTime % 60;
+        int aliveTimeMin = Manager_Stage.Instance.AliveTime / 60;
+        int aliveTimeSec = Manager_Stage.Instance.AliveTime % 60;
 
         _gameOverTitleName.text = TextLoader.Instance.GetText(91000007);
-        _killAmountText.text = string.Format(TextLoader.Instance.GetText(91000009), _stageManager.KillAmount);
-        _totalScoreText.text = string.Format(TextLoader.Instance.GetText(91000010), _stageManager.Score);
+        _killAmountText.text = string.Format(TextLoader.Instance.GetText(91000009), Manager_Stage.Instance.KillAmount);
+        _totalScoreText.text = string.Format(TextLoader.Instance.GetText(91000010), Manager_Stage.Instance.Score);
         _adDescText.text = TextLoader.Instance.GetText(91000011);
         _aliveTimeText.text = string.Format(TextLoader.Instance.GetText(91000008), aliveTimeMin, aliveTimeSec);
 
@@ -90,19 +83,19 @@ public class UI_Stage : UI_Base
 
     public void PauseButtonClick()
     {
-        _stageManager.Pause();
+        Manager_Stage.Instance.Pause();
         _pausePanelObj.SetActive(true);
     }
 
     public void PlayButtonClick()
     {
-        _stageManager.Play();
+        Manager_Stage.Instance.Play();
         _pausePanelObj.SetActive(false);
     }
 
     public void HomeButtonClick()
     {
-        _stageManager.EndStage();
+        Manager_Stage.Instance.EndStage();
     }
 
     public void VolumeButtonClick()
@@ -112,6 +105,7 @@ public class UI_Stage : UI_Base
 
     public void AdButtonClick()
     {
-
+        _gameOverPanelObj.SetActive(false);
+        Character_Player.Instance.PlayAnimation(5);
     }
 }
