@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Stage : UI_Base
+public class UI_Stage : MonoBehaviour
 {
     #region UI Text
     [SerializeField] TextMeshProUGUI _attackButtonText;
@@ -31,10 +32,9 @@ public class UI_Stage : UI_Base
     // fps 테스트용
     float elapsedTime;
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
-
+        TextInit();
         Manager_Stage.Instance.LevelUpAction += TextInit;
         Character_Player.Instance.DeathAction += ShowGameOverPanel;
     }
@@ -51,7 +51,7 @@ public class UI_Stage : UI_Base
         _scoreText.text = Manager_Stage.Instance.Score.ToString();
     }
 
-    protected override void TextInit()
+    private void TextInit()
     {
         _stageLevelText.text = string.Format(TextLoader.Instance.GetText(91000001), Manager_Stage.Instance.StageLevel);
         _attackButtonText.text = TextLoader.Instance.GetText(91000002);

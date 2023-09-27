@@ -1,20 +1,20 @@
-﻿Index,Kor,Eng
-int,string,string
-91000001,레벨 {0},Level {0}
-91000002,공격,Attack
-91000003,나가기,Exit
-91000004,점프,Jump
-91000005,게임 시작,Game Start
-91000006,일시정지,Pause
-91000007,게임 종료,Game Over
-91000008,생존 시간: {0} 분 {1} 초,Alive Time: {0} min {1} sec
-91000009,처치 몬스터: {0},Kill Monster: {0}
-91000010,총 점수: {0},Total Score: {0}
-91000011,광고보고 이어하기,Continuing after ad
-91010001,플레이어,Player
-91011001,파란꽁룡,BlueDino
-91011002,빨간꽁룡,RedDino
-91011003,초록꽁룡,GreenDino
-91011004,노란꽁룡,YellowDino
-91012001,주황불,OrangeFire
-91012002,파란불,BlueFire
+﻿Index,Ko,En,Ja,Zh_CN,Zh_TW
+int,string,string,string,string,string
+91000001,레벨 {0},Level {0},レベル{0},级{0},級{0}
+91000002,공격,attack,攻撃,攻击,攻擊
+91000003,나가기,Outing,外出,郊游,郊遊
+91000004,점프,jump,ジャンプ,跳,跳
+91000005,게임 시작,starting Game,ゲームの開始,开始游戏,開始遊戲
+91000006,일시정지,Pause,一時停止,暂停,暫停
+91000007,게임 종료,game over,ゲームオーバー,游戏结束,遊戲結束
+91000008,생존 시간: {0} 분 {1} 초,Survival time: {0} minute {1} second,サバイバル時間：{0} minute {1} second,生存时间：{0}分钟{1}第二,生存時間：{0}分鐘{1}第二
+91000009,처치 몬스터: {0},Kyo Monster: {0},京のモンスター：{0},Kyo Monster：{0},Kyo Monster：{0}
+91000010,총 점수: {0},Total score: {0},合計スコア：{0},总分：{0},總分：{0}
+91000011,광고보고 이어하기,Listing on advertising,広告のリスト,广告上的列表,廣告上的列表
+91010001,플레이어,player,プレーヤー,球员,球員
+91011001,파란 공룡,Blue dinosaur,青い恐竜,蓝色恐龙,藍色恐龍
+91011002,빨간 공룡,Red dinosaur,赤い恐竜,红色恐龙,紅色恐龍
+91011003,초록 공룡,Green dinosaur,緑の恐竜,绿色恐龙,綠色恐龍
+91011004,노란 공룡,Yellow dinosaur,黄色い恐竜,黄色恐龙,黃色恐龍
+91012001,주황 불꽃,Orange flame,オレンジ色の炎,橙色的火焰,橙色的火焰
+91012002,파란 불꽃,Blue flame,青い炎,蓝色火焰,藍色火焰

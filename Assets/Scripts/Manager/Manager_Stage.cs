@@ -89,7 +89,7 @@ public class Manager_Stage : MonoSingleton<Manager_Stage>
 
     public void EndStage()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Lobby");
     }
 
     public void Pause()

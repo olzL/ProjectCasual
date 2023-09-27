@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UI_Lobby : UI_Base
+public class UI_Lobby : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _startButtonText;
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
+        TextInit();
     }
 
-    protected override void TextInit() 
+    private void TextInit() 
     {
         _startButtonText.text = TextLoader.Instance.GetText(91000005);
     }

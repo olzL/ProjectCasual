@@ -6,12 +6,16 @@ public class TextLoader : SingleTon<TextLoader>
 {
     public string GetText(int index)
     {
+        SystemLanguage language = Application.systemLanguage;
+
         // 다국어 조건 추가
-        switch (Manager_Setting.Instance.Language)
+        switch (language)
         {
-            case ELanguageType.Kor: return Table_910_Text.Instance.DataDic[index].Kor;
-            case ELanguageType.Eng: return Table_910_Text.Instance.DataDic[index].Eng;
-            default: return "null";
+            case SystemLanguage.Korean: return Table_910_Text.Instance.DataDic[index].Ko;
+            case SystemLanguage.Japanese: return Table_910_Text.Instance.DataDic[index].Ja;
+            case SystemLanguage.ChineseSimplified: return Table_910_Text.Instance.DataDic[index].Zh_CN;
+            case SystemLanguage.ChineseTraditional: return Table_910_Text.Instance.DataDic[index].Zh_TW;
+            default: return Table_910_Text.Instance.DataDic[index].En;
         }
     }
 }
