@@ -11,7 +11,9 @@ int,string,string,string,string,string
 91000009,처치 몬스터: {0},Kyo Monster: {0},京のモンスター：{0},Kyo Monster：{0},Kyo Monster：{0}
 91000010,총 점수: {0},Total score: {0},合計スコア：{0},总分：{0},總分：{0}
 91000011,광고보고 이어하기,Listing on advertising,広告のリスト,广告上的列表,廣告上的列表
-91010001,플레이어,player,プレーヤー,球员,球員
+91010001,인간,Human,Human,Human,Human
+91010002,고블린,Goblin,Goblin,Goblin,Goblin
+91010003,스켈레톤,Skeleton,Skeleton,Skeleton,Skeleton
 91011001,파란 공룡,Blue dinosaur,青い恐竜,蓝色恐龙,藍色恐龍
 91011002,빨간 공룡,Red dinosaur,赤い恐竜,红色恐龙,紅色恐龍
 91011003,초록 공룡,Green dinosaur,緑の恐竜,绿色恐龙,綠色恐龍

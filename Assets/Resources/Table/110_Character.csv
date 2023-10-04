@@ -1,6 +1,8 @@
 ﻿Index,Name,HpBase,HpAdd,AtkBase,AtkAdd,CriChance,ScaleX,ScaleY,AnimatorName,Type
 int,int,int,int,int,int,float,float,float,string,ECharacterType
 11000001,91010001,100,0,100,0,0.1,1,1,Player_Default,Character
+11000002,91010002,100,0,100,0,0.1,1,1,Player_Goblin,Character
+11000003,91010003,100,0,100,0,0.1,1,1,Player_Skeleton,Character
 11010001,91011001,100,0,20,5,0,1,1,Monster_DinoBlue,Monster
 11010002,91011002,100,0,20,5,0,1,1,Monster_DinoRed,Monster
 11010003,91011003,100,0,20,5,0,1,1,Monster_DinoGreen,Monster

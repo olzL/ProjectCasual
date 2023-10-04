@@ -696,13 +696,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UiIconsPack_Transparent_Icons_30
+      name: Arrow_Left
       rect:
         serializedVersion: 2
-        x: 2036
-        y: 1555
-        width: 256
-        height: 226
+        x: 2025
+        y: 1530
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -721,9 +721,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2325
-        y: 1541
-        width: 230
-        height: 231
+        y: 1542
+        width: 203
+        height: 230
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -738,13 +738,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UiIconsPack_Transparent_Icons_32
+      name: Arrow_Right
       rect:
         serializedVersion: 2
-        x: 2581
-        y: 1555
-        width: 256
-        height: 226
+        x: 2575
+        y: 1530
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1821,7 +1821,7 @@ TextureImporter:
     nameFileIdTable:
       UiIconsPack_Transparent_Icons_64: -1251328141
       Menu: 1207452853
-      UiIconsPack_Transparent_Icons_30: 572656067
+      Arrow_Left: 572656067
       UiIconsPack_Transparent_Icons_31: 1054189626
       UiIconsPack_Transparent_Icons_91: -969182383
       UiIconsPack_Transparent_Icons_41: -348888781
@@ -1832,6 +1832,7 @@ TextureImporter:
       UiIconsPack_Transparent_Icons_27: 773807646
       UiIconsPack_Transparent_Icons_57: 162901986
       UiIconsPack_Transparent_Icons_38: -369787602
+      Arrow_Right: 121238434
       UiIconsPack_Transparent_Icons_22: 790858946
       UiIconsPack_Transparent_Icons_37: -689494784
       UiIconsPack_Transparent_Icons_70: -1744866329
@@ -1913,7 +1914,6 @@ TextureImporter:
       UiIconsPack_Transparent_Icons_69: 1998319146
       UiIconsPack_Transparent_Icons_10: 288820198
       UiIconsPack_Transparent_Icons_36: 1864586923
-      UiIconsPack_Transparent_Icons_32: 121238434
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

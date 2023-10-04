@@ -27,7 +27,7 @@ public class UI_Stage : MonoBehaviour
 
     [SerializeField] GameObject _pausePanelObj;
     [SerializeField] GameObject _gameOverPanelObj;
-    [SerializeField] Image Hpbar;
+    [SerializeField] Image _hpbar;
 
     // fps 테스트용
     float elapsedTime;
@@ -41,7 +41,7 @@ public class UI_Stage : MonoBehaviour
 
     private void Update()
     {
-        Hpbar.fillAmount = (float)Character_Player.Instance.CurHp / Character_Player.Instance.MaxHp;
+        _hpbar.fillAmount = (float)Character_Player.Instance.CurHp / Character_Player.Instance.MaxHp;
         elapsedTime += Time.deltaTime;
         if (elapsedTime > 0.3f)
         {

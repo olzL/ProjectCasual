@@ -68,6 +68,7 @@ public class Character_Player : Character
 
         SetHitBox(new Vector2(0.5f, 1f),new Vector2(-0.3f, 0f));
         StageLevelUp();
+        PlayAnimation(0);
     }
 
     private void Update()

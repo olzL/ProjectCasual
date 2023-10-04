@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2f1e5d74fab01a4885b05c0b5d5f46e
+guid: dd3d75208758c354db0ea60e96780604
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goblin_Walk_0
+      name: Player_Goblin_Resurrection_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,20 +137,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb93045da037cc847a187a2132f1ae70
-      internalID: 1763655929
+      spriteID: 0a99699a1c512584993e55afbbc1370c
+      internalID: 2131825247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_1
+      name: Player_Goblin_Resurrection_1
       rect:
         serializedVersion: 2
         x: 96
@@ -158,20 +158,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c4dc48e9c5d210419b752852d77eec3
-      internalID: 1707232183
+      spriteID: 8cdbd08fbda8bc04ebb4a65f3a4a4f74
+      internalID: -423360394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_2
+      name: Player_Goblin_Resurrection_2
       rect:
         serializedVersion: 2
         x: 192
@@ -179,20 +179,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2670daf8245cd454c88ba97fd1d0d6e7
-      internalID: 2068927961
+      spriteID: cdca150afd68321458e8f88346621485
+      internalID: 755068494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_3
+      name: Player_Goblin_Resurrection_3
       rect:
         serializedVersion: 2
         x: 288
@@ -200,20 +200,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47d5640a3ecadb34e8f2bd391a24cf6b
-      internalID: 1621517936
+      spriteID: 10c4486e1bfa67c47b15ca6a2cb18569
+      internalID: 1008206909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_4
+      name: Player_Goblin_Resurrection_4
       rect:
         serializedVersion: 2
         x: 384
@@ -221,20 +221,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e06068c7801ad0241903016b401e3eca
-      internalID: 1052320847
+      spriteID: fe6e8d3a29586d440b312cd2553e8050
+      internalID: 965527868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_5
+      name: Player_Goblin_Resurrection_5
       rect:
         serializedVersion: 2
         x: 480
@@ -242,20 +242,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c6e17d7b2ca1a44a96e6e34ada7e4e4
-      internalID: 1543642667
+      spriteID: 426a23f5c2463e248ab52a526a549386
+      internalID: 16756182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_6
+      name: Player_Goblin_Resurrection_6
       rect:
         serializedVersion: 2
         x: 576
@@ -263,20 +263,20 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 475a3606facf0584c8c9287793ffdb03
-      internalID: 265630046
+      spriteID: 58dda8c3e859fe34a99f17efec3d5343
+      internalID: 39666827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin_Walk_7
+      name: Player_Goblin_Resurrection_7
       rect:
         serializedVersion: 2
         x: 672
@@ -284,14 +284,35 @@ TextureImporter:
         width: 96
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d59e55d2ba594f6459964e962b69650c
-      internalID: -1206887231
+      spriteID: 9424ffdca5166004aba89bd03504d5a6
+      internalID: 444047638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Goblin_Resurrection_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc05e9c82c5a8504ba527f253842b8bd
+      internalID: 1897401290
       vertices: []
       indices: 
       edges: []
@@ -307,14 +328,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goblin_Walk_7: -1206887231
-      Goblin_Walk_5: 1543642667
-      Goblin_Walk_2: 2068927961
-      Goblin_Walk_3: 1621517936
-      Goblin_Walk_4: 1052320847
-      Goblin_Walk_1: 1707232183
-      Goblin_Walk_0: 1763655929
-      Goblin_Walk_6: 265630046
+      Player_Goblin_Resurrection_8: 1897401290
+      Player_Goblin_Resurrection_1: -423360394
+      Player_Goblin_Resurrection_3: 1008206909
+      Player_Goblin_Resurrection_0: 2131825247
+      Player_Goblin_Resurrection_4: 965527868
+      Player_Goblin_Resurrection_6: 39666827
+      Player_Goblin_Resurrection_7: 444047638
+      Player_Goblin_Resurrection_5: 16756182
+      Player_Goblin_Resurrection_2: 755068494
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
